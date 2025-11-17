@@ -12,6 +12,39 @@ header {
   text-align: center;
   padding: 2rem 1rem;
 }
+.header-cover {
+  position: relative;
+  text-align: center;
+  color: #fff;
+}
+
+.cover-photo {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  filter: brightness(0.7); /* assombrit légèrement pour que le texte ressorte */
+}
+
+/* Contenu du header sur la couverture */
+.header-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* Photo profil */
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+/* Nom et titre */
 
 header h1 {
   font-size: 2.5rem;
