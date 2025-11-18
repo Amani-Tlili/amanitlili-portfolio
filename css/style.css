@@ -1,21 +1,29 @@
-/* Palette Pastel/Lumineuse mise à jour /
+/* * Fichier de Style pour le Portfolio d'Amani Tlili
+
+Palette de couleurs Pastel : Vert, Bleu, Rose
+*/
+
+/* Définition des Variables de Couleur (Pastel) /
 :root {
---color-bg-primary: #f4f7f9;    / Gris très clair /
---color-bg-secondary: #ffffff;  / Blanc /
+--color-bg-primary: #f4f7f9;    / Gris très clair (Arrière-plan principal) /
+--color-bg-secondary: #ffffff;  / Blanc (Cartes, Conteneurs) /
 --color-text-dark: #333333;     / Gris foncé pour la lisibilité */
 
-/* NOUVELLES COULEURS PASTEL */
---color-accent-green: #A8D0B3; /* Vert Menthe Pastel (Accents, Boutons) */
---color-accent-blue: #B3CDE3;  /* Bleu Ciel Pastel (Titres, Infos) */
---color-accent-pink: #F6CFDA;  /* Rose Poudré Pastel (Séparateurs, Timeline) */
+/* COULEURS PASTEL */
+--color-accent-green: #A8D0B3; /* Vert Menthe Pastel (Accents, Boutons, Barres de progression) */
+--color-accent-blue: #B3CDE3;  /* Bleu Ciel Pastel (Titres, Icones, Dates) */
+--color-accent-pink: #F6CFDA;  /* Rose Poudré Pastel (Séparateurs, Ligne de temps) */
 
---color-border-light: #e0e0e0;
+--color-border-light: #e0e0e0; /* Ligne de séparation légère */
 
 
 }
 
+/* Styles de base pour le corps et la typographie /
 body {
-font-family: 'Inter', sans-serif;
+/ La police 'Inter' a été remplacée par 'Roboto' pour coller à votre HTML, mais gardons 'Inter' si c'est celle souhaitée pour le design /
+/ font-family: 'Inter', sans-serif; */
+font-family: 'Roboto', sans-serif;
 background-color: var(--color-bg-primary);
 color: var(--color-text-dark);
 line-height: 1.6;
@@ -24,7 +32,7 @@ padding: 0;
 scroll-behavior: smooth;
 }
 
-/* Liens par défaut (Vert Pastel) */
+/* Liens */
 a {
 color: var(--color-accent-green);
 text-decoration: none;
@@ -35,14 +43,14 @@ a:hover {
 color: var(--color-text-dark);
 }
 
-/* Structure générale */
+/* Conteneur principal */
 .container {
 max-width: 1100px;
 margin: 0 auto;
 padding: 0 20px;
 }
 
-/* Navigation */
+/* Navigation Fixe */
 #fh5co-nav {
 position: fixed;
 top: 0;
@@ -62,7 +70,7 @@ height: 60px;
 /* Titre du site (Bleu Pastel) */
 .site-title a {
 font-size: 1.6rem;
-font-weight: 800;
+font-weight: 700;
 color: var(--color-accent-blue);
 }
 
@@ -97,32 +105,7 @@ padding: 80px 0;
 border-bottom: 1px solid var(--color-border-light);
 }
 
-/* Section About (Header) */
-#about .header-content {
-text-align: center;
-margin-bottom: 50px;
-padding: 40px;
-background-color: var(--color-bg-secondary);
-border-radius: 12px;
-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
-
-/* H1 (Bleu Pastel) */
-#about h1 {
-font-size: 2.8rem;
-font-weight: 800;
-color: var(--color-accent-blue);
-margin-bottom: 10px;
-}
-
-/* Lead (Texte clair) /
-#about .lead {
-font-size: 1.2rem;
-color: var(--color-text-dark); / Rendre le lead plus lisible */
-font-weight: 600;
-}
-
-/* H2 (Bleu Pastel) */
+/* Titres de Section (H2 en Bleu Pastel) */
 h2 {
 font-size: 2.2rem;
 font-weight: 700;
@@ -138,7 +121,35 @@ color: var(--color-text-dark);
 margin-bottom: 15px;
 }
 
-/* Boutons (Vert Pastel) /
+/* Section À Propos */
+#about {
+text-align: center;
+}
+#about .header-content {
+margin-bottom: 50px;
+padding: 40px;
+background-color: var(--color-bg-secondary);
+border-radius: 12px;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+#about h1 {
+font-size: 2.8rem;
+font-weight: 800;
+color: var(--color-accent-blue);
+margin-bottom: 10px;
+}
+#about .lead {
+font-size: 1.2rem;
+color: var(--color-text-dark);
+font-weight: 600;
+}
+#about p {
+max-width: 800px;
+margin: 0 auto 40px;
+text-align: center;
+}
+
+/* Boutons (Vert Pastel) */
 .btn-primary {
 display: inline-block;
 background-color: var(--color-accent-green);
@@ -148,37 +159,37 @@ border-radius: 8px;
 font-weight: 600;
 text-transform: uppercase;
 letter-spacing: 0.5px;
-box-shadow: 0 4px 8px rgba(168, 208, 179, 0.4); / Ombre Verte */
+box-shadow: 0 4px 8px rgba(168, 208, 179, 0.4);
 transition: background-color 0.3s, transform 0.2s;
 }
 
 .btn-primary:hover {
-background-color: #81c784; /* Vert légèrement plus foncé au hover */
+background-color: #81c784; /* Vert légèrement plus foncé */
 transform: translateY(-2px);
 }
 
-/* Contact Details & Coordonnées (Icones en Bleu Pastel) */
+/* Détails de Contact */
 .contact-details {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 gap: 15px;
-margin-bottom: 30px;
+margin: 20px auto 30px;
 padding: 20px 0;
 border-top: 1px dashed var(--color-border-light);
 border-bottom: 1px dashed var(--color-border-light);
+max-width: 800px;
+text-align: left;
 }
-
 .contact-details p {
 margin: 0;
 color: var(--color-text-dark);
 }
-
 .contact-details i {
 color: var(--color-accent-blue);
 margin-right: 10px;
 }
 
-/* Compétences (Skills) */
+/* Section Compétences (Skills) */
 #skills .row {
 display: flex;
 flex-wrap: wrap;
@@ -201,12 +212,7 @@ padding-bottom: 10px;
 margin-bottom: 25px;
 }
 
-.skill-item h4 {
-font-size: 1rem;
-font-weight: 600;
-margin-bottom: 5px;
-}
-
+/* Barres de progression */
 .progress-bar-container {
 background-color: var(--color-border-light);
 border-radius: 5px;
@@ -215,7 +221,6 @@ overflow: hidden;
 margin-bottom: 20px;
 }
 
-/* Barre de progression (Vert Pastel) */
 .progress-bar {
 background-color: var(--color-accent-green);
 height: 100%;
@@ -279,15 +284,11 @@ border-radius: 50%;
 z-index: 1;
 }
 
-.timeline-item:nth-child(odd) {
-left: 0;
-}
-
 .timeline-item:nth-child(even) {
 left: 50%;
 }
 
-/* Flèches (utilisent le fond secondaire) */
+/* Flèches pour les contenus */
 .timeline-item:nth-child(odd)::before {
 content: " ";
 height: 0;
@@ -314,7 +315,7 @@ border-width: 10px 10px 10px 0;
 border-color: transparent var(--color-bg-secondary) transparent transparent;
 }
 
-/* Points sur la ligne (Positions) */
+/* Positions des points sur la ligne */
 .timeline-item:nth-child(odd)::after {
 left: unset;
 right: -7px;
@@ -323,6 +324,16 @@ right: -7px;
 .timeline-item:nth-child(even)::after {
 left: -8px;
 right: unset;
+}
+
+.timeline-item ul {
+list-style: disc;
+padding-left: 20px;
+margin-top: 10px;
+}
+
+.timeline-item ul li {
+margin-bottom: 5px;
 }
 
 .timeline-content {
@@ -341,29 +352,25 @@ color: var(--color-accent-blue);
 margin-bottom: 5px;
 }
 
-.timeline-content h3 {
-margin-top: 0;
-margin-bottom: 10px;
-font-size: 1.3rem;
+/* Section Formation (Education) - Mise en page centrée simplifiée */
+#education .fh5co-section {
+background-color: var(--color-bg-secondary);
 }
 
-.timeline-content ul {
-padding-left: 20px;
-list-style: disc;
-color: #555;
-margin-top: 5px;
-}
-
-/* Section Formation (Simplifié pour le design) */
 #education .timeline::after {
+/* Ligne centrée */
 left: 50%;
 margin-left: -1.5px;
 }
+
 #education .timeline-item {
+/* Éléments centrés pour la formation */
 width: 100%;
 padding: 20px 0;
 text-align: center;
 }
+
+/* Supprimer les points et flèches de la formation pour un style plus propre */
 #education .timeline-item::after, #education .timeline-item::before {
 display: none;
 }
@@ -381,7 +388,7 @@ max-width: 800px;
 margin: 0 auto;
 }
 
-/* Border Left (Rose Pastel) */
+/* Bordure Gauche (Rose Pastel) */
 .certifications-list li {
 background-color: var(--color-bg-secondary);
 margin-bottom: 15px;
@@ -400,26 +407,29 @@ transform: translateY(-2px);
 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Icones (Bleu Pastel) */
+/* Icones de Certification (Bleu Pastel) /
 .certifications-list i {
 color: var(--color-accent-blue);
 font-size: 1.5rem;
 margin-right: 15px;
+min-width: 25px; / Assure un alignement propre */
 }
 
 .certifications-list strong {
 font-weight: 600;
 color: var(--color-text-dark);
+flex-grow: 1;
 }
 
-/* Date (Bleu Pastel) */
+/* Date de Certification (Bleu Pastel) */
 .certifications-list .date {
 color: var(--color-accent-blue);
 font-size: 0.9rem;
 margin-left: 10px;
+flex-shrink: 0;
 }
 
-/* Contact */
+/* Section Contact */
 #contact {
 text-align: center;
 background-color: var(--color-bg-secondary);
@@ -440,12 +450,18 @@ padding: 20px 0;
 font-size: 0.9rem;
 }
 
-/* Media Queries (Rendre le tout responsive) /
+/* =========================================================
+MEDIA QUERIES (Rendre le tout responsive pour mobile)
+========================================================= */
+
 @media screen and (max-width: 768px) {
+
+/* Navigation */
 #fh5co-nav ul {
-display: none; / Cache la navigation principale sur mobile */
+    display: none; /* Cache la navigation principale sur mobile */
 }
 
+/* Titres */
 #about h1 {
     font-size: 2rem;
 }
@@ -458,14 +474,15 @@ h2 {
     font-size: 1.8rem;
 }
 
+/* Compétences */
 #skills .row {
     flex-direction: column;
     gap: 30px;
 }
 
-/* Timeline Mobile */
+/* Timeline Mobile (Passe en vue simple colonne) */
 .timeline::after {
-    left: 31px;
+    left: 31px; /* Décale la ligne à gauche */
 }
 
 .timeline-item {
@@ -475,17 +492,20 @@ h2 {
     margin-bottom: 40px;
 }
 
+/* Réinitialiser les positions des éléments de la timeline */
 .timeline-item:nth-child(even), .timeline-item:nth-child(odd) {
     left: 0;
 }
 
+/* Flèche/Indicateur */
 .timeline-item::before, .timeline-item:nth-child(even)::before {
     left: 60px;
-    border: medium solid var(--color-bg-secondary);
+    right: unset;
     border-width: 10px 10px 10px 0;
     border-color: transparent var(--color-bg-secondary) transparent transparent;
 }
 
+/* Point sur la ligne */
 .timeline-item::after, .timeline-item:nth-child(even)::after, .timeline-item:nth-child(odd)::after {
     left: 23px;
     right: unset;
@@ -503,7 +523,21 @@ h2 {
 
 #education .timeline-content {
     max-width: 100%;
-    margin: 0;
+}
+
+/* Certifications */
+.certifications-list li {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.certifications-list i {
+    margin-bottom: 5px;
+}
+
+.certifications-list .date {
+    margin-left: 0;
+    margin-top: 5px;
 }
 
 
