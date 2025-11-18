@@ -1,236 +1,95 @@
-/* Importation de la police (si vous avez mis le lien dans le HTML) */
-body {
-    font-family: 'Roboto', sans-serif;
+/* --- Portfolio (Work) --- */
+.portfolio-filter {
+    text-align: center; /* Centrer les filtres */
+    margin-bottom: 40px;
+}
+.portfolio-filter a {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 8px 15px;
     color: #444;
-    margin: 0;
-    background: #fff;
-}
-
-/* 1. La navigation latérale (Jackson Style) */
-#fh5co-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 250px;
-    background: #333;
-    padding: 30px 20px;
-    box-sizing: border-box;
-    overflow-y: auto;
-    text-align: center;
-}
-
-#fh5co-nav .site-title a {
-    color: #fff;
-    font-size: 24px;
-    font-weight: 700;
-    display: block;
-    margin-bottom: 20px;
     text-decoration: none;
-}
-
-#fh5co-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-#fh5co-nav ul li a {
-    display: block;
-    color: rgba(255, 255, 255, 0.7);
-    padding: 10px 0;
-    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
     transition: 0.3s;
+    font-weight: 500;
 }
-
-#fh5co-nav ul li a:hover,
-#fh5co-nav ul li a.active { /* Ajout de la classe active pour le Scrollspy */
-    color: #fff;
-}
-
-/* 2. Le contenu principal */
-#fh5co-main {
-    margin-left: 250px;
-    padding: 0;
-}
-
-.fh5co-section {
-    padding: 80px 40px;
-    border-bottom: 1px solid #eee;
-}
-
-/* Base pour les titres */
-h2 {
-    font-size: 32px;
-    margin-bottom: 30px;
-    border-bottom: 2px solid #007bff; /* Couleur d'accentuation */
-    display: inline-block;
-    padding-bottom: 5px;
-}
-
-/* Styles pour le pied de page (footer) */
-#fh5co-footer {
-    padding: 30px;
-    text-align: center;
-    color: #999;
-    border-top: 1px solid #eee;
-}
-
-/* Styles pour le bouton */
-.btn-primary {
-    background-color: #007bff;
+.portfolio-filter a:hover,
+.portfolio-filter a.active {
+    background-color: #007bff; /* Couleur d'accentuation */
     color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    display: inline-block;
-    margin-top: 20px;
+    border-color: #007bff;
 }
 
-/* Styles des barres de compétences */
-.skill-item h4 {
-    margin-bottom: 5px;
-}
-.progress-bar-container {
-    background-color: #f1f1f1;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    height: 15px;
-}
-
-.progress-bar {
-    height: 100%;
-    background-color: #007bff;
-    border-radius: 5px;
-    width: 0; 
-    transition: width 0.5s ease-in-out;
-}
-
-/* --- Mise en page (Grille simple) --- */
-.row {
+/* Grille des projets */
+.portfolio-grid {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -15px;
+    /* Le positionnement final des éléments dans la grille est géré par Isotope JS */
 }
-.col-half {
-    width: 50%;
-    padding: 0 15px;
+/* Le padding est géré dans l'HTML via la classe .col-half, mais on le garde pour la structure */
+.portfolio-grid .item {
+    padding: 15px;
     box-sizing: border-box;
 }
-.col-half h3 {
-    border-bottom: none; /* Ne pas dupliquer la ligne de h2 */
+
+.project-wrap {
+    background: #f8f8f8;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    height: 100%; /* S'assurer qu'ils sont de hauteur égale dans la colonne */
 }
 
-/* --- Timeline (pour Expérience et Formation) --- */
-.timeline {
-    position: relative;
-    padding: 20px 0 20px 30px;
-    list-style: none;
+.img-wrap {
+    display: block;
+    overflow: hidden;
+    height: 200px; /* Hauteur fixe pour l'image (ajustez si besoin) */
 }
-/* La ligne verticale */
-.timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 6px;
-    width: 2px;
+.img-wrap img {
+    width: 100%;
     height: 100%;
-    background: #ccc;
+    object-fit: cover; /* Assure que l'image couvre la zone sans déformation */
+    transition: transform 0.5s ease;
 }
-.timeline-item {
-    position: relative;
-    margin-bottom: 30px;
-}
-/* Le point sur la ligne */
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -30px;
-    top: 5px;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: #007bff;
-    border: 2px solid #fff;
-    z-index: 10;
-}
-.timeline-date {
-    font-size: 14px;
-    color: #999;
-    margin-bottom: 5px;
-}
-.timeline-item h3 {
-    margin-top: 0;
-    font-size: 18px;
-    color: #333;
-}
-.timeline-item ul {
-    padding-left: 20px;
-    margin: 10px 0 0 0;
+.project-wrap:hover .img-wrap img {
+    transform: scale(1.05); /* Effet zoom au survol */
 }
 
-/* --- Contact Details --- */
-.contact-details {
-    margin-top: 20px;
-    line-height: 1.8;
+.text-wrap {
+    padding: 20px;
 }
-.contact-details i {
-    color: #007bff;
-    width: 20px;
-}
-.big-contact a {
+.text-wrap h3 {
     font-size: 20px;
-    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 5px;
+    border-bottom: none; /* Ne pas avoir de ligne sous le titre du projet */
+}
+.text-wrap span {
+    display: block;
+    color: #999;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+.btn-detail {
     color: #007bff;
     text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+.btn-detail i {
+    margin-left: 5px;
 }
 
-
-/* --- Certifications --- */
-.certifications-list {
-    list-style: none;
-    padding: 0;
-}
-.certifications-list li {
-    margin-bottom: 10px;
-    font-size: 16px;
-    color: #444;
-}
-.certifications-list li i {
-    color: #007bff;
-    margin-right: 10px;
-}
-.certifications-list .date {
-    font-style: italic;
-    color: #666;
-    margin-left: 10px;
+/* Règle de style pour que le JS Isotope fonctionne */
+.isotope-hidden {
+    display: none;
 }
 
-
-/* --- Responsive pour les petits écrans --- */
+/* Ajustement Responsive pour les mobiles */
 @media screen and (max-width: 768px) {
-    #fh5co-nav {
-        position: static;
-        width: 100%;
-        height: auto;
-        padding: 10px 20px;
-    }
-    #fh5co-nav .site-title a {
-        display: none;
-    }
-    #fh5co-nav ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    #fh5co-nav ul li {
-        margin: 0 5px;
-    }
-    #fh5co-main {
-        margin-left: 0;
-    }
-    .col-half {
-        width: 100%;
-        margin-bottom: 30px;
+    .portfolio-filter a {
+        margin: 5px;
+        padding: 6px 12px;
     }
 }
