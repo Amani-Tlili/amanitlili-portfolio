@@ -1,13 +1,124 @@
+/* Importation de la police (si vous avez mis le lien dans le HTML) */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #444;
+    margin: 0;
+    background: #fff;
+}
+
+/* 1. La navigation latérale (Jackson Style) */
+#fh5co-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 250px;
+    background: #333;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    text-align: center;
+}
+
+#fh5co-nav .site-title a {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+#fh5co-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#fh5co-nav ul li a {
+    display: block;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 10px 0;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+#fh5co-nav ul li a:hover,
+#fh5co-nav ul li a.active { /* Ajout de la classe active pour le Scrollspy */
+    color: #fff;
+}
+
+/* 2. Le contenu principal */
+#fh5co-main {
+    margin-left: 250px;
+    padding: 0;
+}
+
+.fh5co-section {
+    padding: 80px 40px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Base pour les titres */
+h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #007bff; /* Couleur d'accentuation */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Styles pour le pied de page (footer) */
+#fh5co-footer {
+    padding: 30px;
+    text-align: center;
+    color: #999;
+    border-top: 1px solid #eee;
+}
+
+/* Styles pour le bouton */
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+/* Styles des barres de compétences */
+.skill-item h4 {
+    margin-bottom: 5px;
+}
+.progress-bar-container {
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    height: 15px;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #007bff;
+    border-radius: 5px;
+    width: 0; 
+    transition: width 0.5s ease-in-out;
+}
+
 /* --- Mise en page (Grille simple) --- */
 .row {
     display: flex;
-    flex-wrap: wrap; /* Pour gérer le responsive */
-    margin: 0 -15px; /* Pour compenser le padding des colonnes */
+    flex-wrap: wrap;
+    margin: 0 -15px;
 }
 .col-half {
     width: 50%;
     padding: 0 15px;
     box-sizing: border-box;
+}
+.col-half h3 {
+    border-bottom: none; /* Ne pas dupliquer la ligne de h2 */
 }
 
 /* --- Timeline (pour Expérience et Formation) --- */
@@ -24,7 +135,7 @@
     left: 6px;
     width: 2px;
     height: 100%;
-    background: #ccc; /* Couleur de la ligne */
+    background: #ccc;
 }
 .timeline-item {
     position: relative;
@@ -39,7 +150,7 @@
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background: #007bff; /* Couleur d'accentuation */
+    background: #007bff;
     border: 2px solid #fff;
     z-index: 10;
 }
@@ -58,6 +169,23 @@
     margin: 10px 0 0 0;
 }
 
+/* --- Contact Details --- */
+.contact-details {
+    margin-top: 20px;
+    line-height: 1.8;
+}
+.contact-details i {
+    color: #007bff;
+    width: 20px;
+}
+.big-contact a {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff;
+    text-decoration: none;
+}
+
+
 /* --- Certifications --- */
 .certifications-list {
     list-style: none;
@@ -69,7 +197,7 @@
     color: #444;
 }
 .certifications-list li i {
-    color: #007bff; /* Couleur d'accentuation pour les icônes */
+    color: #007bff;
     margin-right: 10px;
 }
 .certifications-list .date {
@@ -78,19 +206,20 @@
     margin-left: 10px;
 }
 
+
 /* --- Responsive pour les petits écrans --- */
 @media screen and (max-width: 768px) {
     #fh5co-nav {
-        position: static; /* La barre devient statique en haut */
+        position: static;
         width: 100%;
         height: auto;
         padding: 10px 20px;
     }
     #fh5co-nav .site-title a {
-        display: none; /* Cache le titre sur mobile pour gagner de la place */
+        display: none;
     }
     #fh5co-nav ul {
-        display: flex; /* Affiche les liens en ligne */
+        display: flex;
         flex-wrap: wrap;
         justify-content: center;
     }
@@ -98,10 +227,10 @@
         margin: 0 5px;
     }
     #fh5co-main {
-        margin-left: 0; /* Le contenu prend toute la largeur */
+        margin-left: 0;
     }
     .col-half {
-        width: 100%; /* Les colonnes passent en pleine largeur */
+        width: 100%;
         margin-bottom: 30px;
     }
 }
