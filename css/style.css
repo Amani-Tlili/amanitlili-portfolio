@@ -1,222 +1,48 @@
-/* ==================== ROOT VARIABLES ==================== */
 :root {
-    --primary-color: #a3cef1; /* bleu pastel */
-    --secondary-color: #f7c6c7; /* rose pastel */
-    --accent-color: #b9fbc0; /* vert pastel */
-    --light-bg: #f9f9f9;
-    --text-color: #1f2937;
-    --heading-color: #1b1b2f;
-    --font-family: 'Inter', sans-serif;
+  --blue: #a3cef1;
+  --pink: #f7c6c7;
+  --green: #b9fbc0;
+  --text: #3c4a62;
+  --heading: #1b1b2f;
 }
 
-/* ==================== GLOBAL ==================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* {margin:0; padding:0; box-sizing:border-box;}
+body {font-family:'Poppins', sans-serif; line-height:1.7; background:#fff; color:var(--text);}
 
-body {
-    font-family: var(--font-family);
-    background-color: var(--light-bg);
-    color: var(--text-color);
-    line-height: 1.6;
-    scroll-behavior: smooth;
-}
+/* NAVBAR */
+.navbar {position:fixed; top:0; width:100%; background:#fff; display:flex; justify-content:center; padding:1rem 0; box-shadow:0 2px 10px rgba(0,0,0,0.05); z-index:100;}
+.nav-links {display:flex; gap:25px; list-style:none;}
+.nav-links a {text-decoration:none; color:var(--text); padding:8px 14px; border-radius:12px; transition:0.3s;}
+.nav-links a:hover {background:var(--blue); color:#fff;}
 
-/* ==================== NAVBAR ==================== */
-.navbar {
-    background: var(--primary-color);
-    padding: 1rem 2rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
+/* HERO */
+.hero {display:flex; justify-content:space-between; align-items:center; padding:140px 10%; background:linear-gradient(135deg, var(--blue), var(--pink), var(--green)); border-radius:20px; margin-top:60px;}
+.hero-content h1 {font-size:45px; font-weight:700; margin-bottom:15px;}
+.hero-content h1 span {color:var(--pink);}
+.hero-content p {margin:10px 0;}
+.hero-image img {width:300px; border-radius:20px;}
 
-.navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-}
+/* BUTTONS */
+.btn-primary, .contact-btn {padding:12px 24px; background:var(--pink); color:#fff; border-radius:12px; text-decoration:none; font-weight:600; display:inline-block; margin-top:15px; transition:0.3s;}
+.btn-primary:hover, .contact-btn:hover {background:var(--green);}
 
-.navbar a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s;
-}
+/* SECTIONS */
+.section {padding:80px 10%; text-align:center;}
+.section h2 {font-size:32px; margin-bottom:30px; color:var(--heading);}
+.skills-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px;}
+.skill-card {padding:20px; background:#f9f9f9; border-radius:16px; font-weight:600; box-shadow:0 4px 10px rgba(0,0,0,0.05); text-align:left;}
+.timeline-item {background:#fff; padding:20px; border-radius:16px; margin:15px 0; box-shadow:0 4px 10px rgba(0,0,0,0.05); text-align:left;}
 
-.navbar a:hover {
-    color: var(--secondary-color);
-}
+/* CONTACT */
+.contact-section .contact-box {background:#fff; padding:40px 30px; max-width:500px; margin:0 auto; border-radius:16px; box-shadow:0 4px 16px rgba(0,0,0,0.08);}
+.contact-box a {color:var(--blue); text-decoration:none; font-weight:600;}
 
-/* ==================== CONTAINERS ==================== */
-.container {
-    width: 90%;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 2rem 0;
-}
+/* FOOTER */
+footer {background:var(--text); color:#fff; padding:20px; text-align:center; margin-top:40px;}
 
-/* ==================== ABOUT ==================== */
-.about-section h1 {
-    font-size: 2.5rem;
-    color: var(--heading-color);
-    margin-bottom: 1rem;
-}
-
-.about-section p {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-}
-
-.contact-details p {
-    margin: 0.4rem 0;
-}
-
-.contact-details a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.contact-details a:hover {
-    color: var(--secondary-color);
-}
-
-/* ==================== SKILLS ==================== */
-.skills-section h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: var(--heading-color);
-}
-
-.skill-item {
-    margin-bottom: 1.5rem;
-}
-
-.skill-item h4 {
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    color: var(--heading-color);
-}
-
-.progress-bar-container {
-    width: 100%;
-    height: 10px;
-    background: #eaeaea;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.progress-bar {
-    height: 100%;
-    border-radius: 5px;
-    background: var(--secondary-color);
-    transition: width 0.5s ease-in-out;
-}
-
-/* ==================== TIMELINE ==================== */
-.timeline {
-    position: relative;
-    padding-left: 2rem;
-    margin-top: 2rem;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 1rem;
-    width: 4px;
-    height: 100%;
-    background-color: #cce7ff;
-    border-radius: 2px;
-}
-
-.timeline-item {
-    position: relative;
-    padding: 1rem 0 1rem 2rem;
-    margin-bottom: 2rem;
-}
-
-.timeline-item::after {
-    content: '';
-    position: absolute;
-    top: 1rem;
-    left: 0.7rem;
-    width: 12px;
-    height: 12px;
-    background-color: var(--primary-color);
-    border-radius: 50%;
-    border: 2px solid white;
-}
-
-.timeline-date {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: #6b7280;
-    margin-bottom: 0.5rem;
-}
-
-/* ==================== CONTACT ==================== */
-.contact-section {
-    padding: 60px 0;
-}
-
-.contact-box {
-    background: #ffffff;
-    padding: 40px 30px;
-    max-width: 500px;
-    margin: 0 auto;
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-    text-align: center;
-}
-
-.contact-box h2 {
-    margin-bottom: 1rem;
-    color: var(--heading-color);
-}
-
-.contact-box p {
-    margin: 0.6rem 0;
-    font-size: 18px;
-}
-
-.contact-box a {
-    color: var(--primary-color);
-    font-weight: 600;
-}
-
-.contact-btn,
-.btn-primary {
-    margin-top: 24px;
-    padding: 12px 24px;
-    background: var(--secondary-color);
-    color: white;
-    border: none;
-    border-radius: 12px;
-    font-size: 18px;
-    text-decoration: none;
-    display: inline-block;
-    transition: background 0.3s, transform 0.2s;
-}
-
-.contact-btn:hover,
-.btn-primary:hover {
-    background: var(--accent-color);
-    transform: translateY(-2px);
-}
-
-/* ==================== FOOTER ==================== */
-footer {
-    text-align: center;
-    padding: 2rem 0;
-    background: var(--primary-color);
-    color: white;
-    font-size: 0.9rem;
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero {flex-direction:column; text-align:center;}
+  .hero-image img {width:250px; margin-bottom:20px;}
+  .nav-links {flex-direction:column; gap:15px;}
 }
