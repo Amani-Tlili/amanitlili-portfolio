@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Amani Tlili</title>
+    
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-
+    
     <!-- NAVIGATION -->
-    <nav id="fh5co-nav">
-        <div class="site-title">
-            <a href="#">Amani Tlili</a>
-        </div>
-        <ul class="nav-links">
+    <nav id="fh5co-nav" role="navigation">
+        <ul>
             <li><a href="#about">À propos</a></li>
             <li><a href="#skills">Compétences</a></li>
             <li><a href="#experience">Expérience</a></li>
@@ -22,91 +21,204 @@
             <li><a href="#certifications">Certifications</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="mobile-btn" id="mobile-btn">☰</div>
     </nav>
 
-    <!-- HERO (comme le design Bosa Portfolio) -->
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Hello, je suis <span>Amani Tlili</span></h1>
-            <p>Junior Data Analyst & Développeuse Web</p>
-            <a href="#contact" class="btn-primary">Me contacter</a>
-        </div>
-        <div class="hero-image">
-            <img src="images/couv.png" alt="Amani Tlili">
-        </div>
-    </header>
+    <div id="fh5co-main">
+        
+        <!-- SECTION À PROPOS -->
+        <section id="about" class="section">
+            <div class="container">
+                <h1>Bonjour, je suis Amani Tlili</h1>
+                <p>Analyste de données et Développeuse Web Full-Stack junior, motivée et polyvalente. Solide maîtrise des technologies web et des outils d’analyse de données. Capable de transformer les données en insights et de créer des applications web fonctionnelles.</p>
 
-    <!-- À PROPOS -->
-    <section id="about" class="section">
-        <h2>À propos</h2>
-        <p>
-            Analyste de données et Développeuse Web Full-Stack junior, motivée et polyvalente. Solide maîtrise des technologies web (HTML, CSS, JavaScript, PHP, MySQL) 
-            combinée à une base en analyse et visualisation de données (Excel, Power BI). Capable de transformer des données en informations utiles, de concevoir des applications 
-            web fonctionnelles et d’optimiser la performance des systèmes. Rigoureuse, autonome et dotée d’un esprit analytique, j’apprends rapidement et collabore efficacement au
-            sein d’équipes multidisciplinaires.
-        </p>
-    </section>
-
-    <!-- COMPÉTENCES -->
-    <section id="skills" class="section">
-        <h2>Compétences</h2>
-        <div class="skills-grid">
-            <div class="skill-card">Power BI</div>
-            <div class="skill-card">Python</div>
-            <div class="skill-card">SQL</div>
-            <div class="skill-card">HTML/CSS</div>
-            <div class="skill-card">JavaScript</div>
-            <div class="skill-card">GitHub</div>
-        </div>
-    </section>
-
-    <!-- EXPÉRIENCE -->
-    <section id="experience" class="section">
-        <h2>Expérience</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <h3>Agente de Voyage - 2024</h3>
-                <p>Gestion des clients, organisation des voyages et service professionnel.</p>
+                <h3>Mes coordonnées</h3>
+                <div class="contact-details">
+                    <p><i class="fa-solid fa-location-dot"></i> Montréal, QC</p>
+                    <p><i class="fa-solid fa-envelope"></i> <a href="mailto:ameni1tlili@gmail.com">ameni1tlili@gmail.com</a></p>
+                    <p><i class="fa-solid fa-phone"></i> 438-855-1310</p>
+                    <p><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/amanitlili" target="_blank">Profil LinkedIn</a></p>
+                </div>
+                <a href="#" class="btn-primary">Télécharger mon CV</a>
             </div>
-            <div class="timeline-item">
-                <h3>Développeuse Web (Original Engineering)</h3>
-                <p>Création de sites web modernes & design UX.</p>
+        </section>
+
+        <!-- SECTION COMPÉTENCES -->
+        <section id="skills" class="section">
+            <div class="container">
+                <h2>Compétences Techniques</h2>
+
+                <div class="row">
+                    <div class="col-half">
+                        <div class="skill-item">
+                            <h4>Langages : HTML, CSS, JavaScript, PHP, SQL, Python</h4>
+                            <div class="progress-bar-container"><div class="progress-bar" style="width: 90%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <h4>Bases de données : MySQL, SQLite</h4>
+                            <div class="progress-bar-container"><div class="progress-bar" style="width: 85%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <h4>Outils d’analyse : Excel avancé, Google Sheets, Power BI</h4>
+                            <div class="progress-bar-container"><div class="progress-bar" style="width: 80%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <h4>Nettoyage et organisation des données</h4>
+                            <div class="progress-bar-container"><div class="progress-bar" style="width: 95%;"></div></div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-half">
+                        <h3>Compétences Clés</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Analyse et résolution de problèmes</li>
+                            <li><i class="fa-solid fa-check"></i> Apprentissage rapide</li>
+                            <li><i class="fa-solid fa-check"></i> Communication efficace</li>
+                            <li><i class="fa-solid fa-check"></i> Autonomie et rigueur</li>
+                            <li><i class="fa-solid fa-check"></i> Travail d’équipe et collaboration</li>
+                            <li><i class="fa-solid fa-globe"></i> Langues : Français (avancé), Anglais (intermédiaire), Arabe (maternelle)</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- FORMATION -->
-    <section id="education" class="section">
-        <h2>Formation</h2>
-        <ul class="edu-list">
-            <li>Maîtrise en informatique (2015)</li>
-            <li>Baccalauréat en informatique (2013)</li>
-            <li>D.E.S (Tunisie)</li>
-        </ul>
-    </section>
+        <!-- SECTION EXPÉRIENCE -->
+        <section id="experience" class="section">
+            <div class="container">
+                <h2>Expérience professionnelle</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2024 | Montréal, QC</div>
+                        <h3>Agente de voyage – Classy Travel</h3>
+                        <ul>
+                            <li>Analyse des données clients pour proposer des offres personnalisées</li>
+                            <li>Saisie, vérification et mise à jour des données dans le système interne</li>
+                            <li>Création de rapports hebdomadaires (Excel, Google Sheets)</li>
+                            <li>Suivi des KPI et visualisation des tendances</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2016 – 2018 | Tunisie</div>
+                        <h3>Développeuse web et designer – Original Engineering</h3>
+                        <ul>
+                            <li>Développement de sites web dynamiques (HTML, CSS, JS, PHP)</li>
+                            <li>Création et optimisation de bases de données MySQL</li>
+                            <li>Implémentation backend et amélioration de la performance</li>
+                        </ul>
+                    </div>
 
-    <!-- CERTIFICATIONS -->
-    <section id="certifications" class="section">
-        <h2>Certifications</h2>
-        <ul>
-            <li>Microsoft — Power BI</li>
-            <li>Certification OPC (Conseillère en voyage)</li>
-        </ul>
-    </section>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2016 – 2019 | Tunisie</div>
+                        <h3>Enseignante – Institut Supérieur des Études Technologiques du Kef</h3>
+                        <ul>
+                            <li>Enseignement de la programmation et des bases de données</li>
+                            <li>Création d’exercices pratiques en SQL et modélisation de données</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-        <h2>Contact</h2>
-        <p>Email : <strong>ameni1tlili@gmail.com</strong></p>
-        <p>Téléphone : <strong>438-855-1310</strong></p>
-        <a href="mailto:ameni1tlili@gmail.com" class="btn-primary">Envoyer un message</a>
-    </section>
+        <!-- SECTION FORMATION -->
+        <section id="education" class="section">
+            <div class="container">
+                <h2>Formation</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">Hiver 2026</div>
+                        <h3>Certificat en exploitation et valorisation des données</h3>
+                        <p>HEC Montréal</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2025</div>
+                        <h3>Certificat – Des applications web pour tous</h3>
+                        <p>University of Michigan (Coursera)</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2025</div>
+                        <h3>Building Database Applications in PHP</h3>
+                        <p>University of Michigan (Coursera)</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2025</div>
+                        <h3>Preparing Data for Analysis with Microsoft Excel</h3>
+                        <p>Microsoft (Coursera)</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2021</div>
+                        <h3>Maîtrise en sciences de l’informatique – Multimédia & Web</h3>
+                        <p>Institut Supérieur d’Informatique du Kef, Tunisie</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2015</div>
+                        <h3>Maîtrise en sciences de l’informatique – Génie logiciel</h3>
+                        <p>ISET Sousse, Tunisie</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2013</div>
+                        <h3>Baccalauréat en sciences de l’informatique</h3>
+                        <p>ISET Sousse, Tunisie</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2024</div>
+                        <h3>Certificat de qualification professionnelle OPC</h3>
+                        <p>Québec</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <footer>
-        © 2025 Amani Tlili — Portfolio pastel
-    </footer>
+        <!-- SECTION CERTIFICATIONS -->
+        <section id="certifications" class="section">
+            <div class="container">
+                <h2>Licences et certifications</h2>
+                
+                <ul class="certifications-list">
+                    <li>
+                        <i class="fa-solid fa-graduation-cap"></i> Building Database Applications in PHP (University of Michigan)
+                        <span class="date">(Nov. 2025)</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-graduation-cap"></i> JavaScript, jQuery, and JSON (University of Michigan)
+                        <span class="date">(Nov. 2025)</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-file-excel"></i> Preparing Data for Analysis with Microsoft Excel (Microsoft)
+                        <span class="date">(Nov. 2025)</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-laptop-code"></i> Certificat – Spécialisation Des applications web pour tous (University of Michigan, 2025)
+                    </li>
+                </ul>
+            </div>
+        </section>
 
+        <!-- SECTION CONTACT -->
+        <section id="contact" class="section contact-section">
+            <h2>Contact</h2>
+
+            <div class="contact-box">
+                <p><strong>📍 Montréal, QC</strong></p>
+                <p>📧 <a href="mailto:ameni1tlili@gmail.com">ameni1tlili@gmail.com</a></p>
+                <p>📞 438-855-1310</p>
+                <p>🔗 <a href="https://www.linkedin.com/in/amanitlili" target="_blank">LinkedIn</a></p>
+
+                <a href="mailto:ameni1tlili@gmail.com" class="btn-primary contact-btn">
+                    Me contacter
+                </a>
+            </div>
+        </section>
+
+        <footer id="fh5co-footer">
+            <p>2025 &copy; Amani Tlili. Tous droits réservés.</p>
+        </footer>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/main.js"></script>
+
 </body>
 </html>
