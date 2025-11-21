@@ -1,133 +1,125 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio - Amani Tlili</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-
-  <!-- NAVBAR -->
   <nav class="navbar">
-    <ul class="nav-links">
-      <li><a href="#about">À propos</a></li>
-      <li><a href="#experience">Expérience</a></li>
-      <li><a href="#education">Formation</a></li>
-      <li><a href="#skills">Compétences</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div class="container">
+      <a href="#" class="logo">Amani Tlili</a>
+      <ul class="nav-links">
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#experience">Expérience</a></li>
+        <li><a href="#education">Formation</a></li>
+        <li><a href="#skills">Compétences</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <!-- HERO / ABOUT -->
-  <section id="about" class="hero">
-    <div class="hero-content">
-      <h1>Bonjour, je suis <span>Amani Tlili</span></h1>
-      <p>Développeuse Web Full-Stack et Analyste de données junior.</p>
-      <p>Je transforme des données en informations utiles et conçois des applications web fonctionnelles.</p>
-      <p>📍 Montréal, QC | 📧 <a href="mailto:ameni1tlili@gmail.com">ameni1tlili@gmail.com</a> | 📞 438-855-1310</p>
-      <p>🔗 <a href="https://www.linkedin.com/in/amanitlili" target="_blank">LinkedIn</a></p>
+  <header id="about" class="hero">
+    <div class="hero-content container">
+      <div class="hero-text">
+        <h1>Bonjour, je suis <span>Amani Tlili</span></h1>
+        <p>Analyste de données & Développeuse Web Full‑Stack junior.</p>
+        <p>Je transforme les données en insights et je crée des applications web performantes.</p>
+      </div>
+      <div class="hero-image">
+        <img src="images/amani-photo.jpg" alt="Photo Amani Tlili" />
+      </div>
     </div>
-    <div class="hero-image">
-      <img src="images/amani-photo.jpg" alt="Amani Tlili">
-    </div>
-  </section>
+  </header>
 
-  <!-- EXPERIENCE -->
   <section id="experience" class="section">
-    <h2>Expérience Professionnelle</h2>
-    
-    <div class="timeline-item">
-      <h3>Agente de voyage — Classy Travel</h3>
-      <p>Montréal, QC | 2024</p>
-      <ul>
-        <li>Analyse de données clients pour proposer des offres personnalisées.</li>
-        <li>Saisie et mise à jour des données internes.</li>
-        <li>Création de rapports hebdomadaires (Excel, Google Sheets).</li>
-        <li>Suivi des KPI et visualisation des tendances.</li>
-        <li>➡ Compétences : analyse de données, gestion de bases, rigueur.</li>
-      </ul>
-    </div>
-
-    <div class="timeline-item">
-      <h3>Développeuse web — Original Engineering</h3>
-      <p>Tunisie | 2016–2018</p>
-      <ul>
-        <li>Développement de sites web dynamiques (HTML, CSS, JS, PHP).</li>
-        <li>Optimisation de bases de données MySQL.</li>
-        <li>Implémentation de fonctionnalités backend.</li>
-        <li>➡ Compétences : développement full-stack, SQL, UX/UI.</li>
-      </ul>
-    </div>
-
-    <div class="timeline-item">
-      <h3>Enseignante — Institut Supérieur des Études Technologiques du Kef</h3>
-      <p>Tunisie | 2016–2019</p>
-      <ul>
-        <li>Enseignement de la programmation et bases de données.</li>
-        <li>Création d’exercices pratiques SQL et modélisation.</li>
-        <li>➡ Compétences : pédagogie, vulgarisation, expertise technique.</li>
-      </ul>
+    <div class="container">
+      <h2>Expérience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>Agente de voyage — Classy Travel</h3>
+          <p>Montréal, QC | 2024</p>
+          <ul>
+            <li>Analyse de données clients pour offres personnalisées.</li>
+            <li>Saisie, vérification et mise à jour des données internes.</li>
+            <li>Création de rapports Excel / Google Sheets.</li>
+            <li>Suivi des KPI et visualisation des tendances.</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <h3>Développeuse Web & Designer — Original Engineering</h3>
+          <p>Tunisie | 2016‑2018</p>
+          <ul>
+            <li>Développement de sites dynamiques (HTML, CSS, JS, PHP).</li>
+            <li>Optimisation des bases de données MySQL.</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <h3>Enseignante — ISET du Kef</h3>
+          <p>Tunisie | 2016‑2019</p>
+          <ul>
+            <li>Enseignement de la programmation et modélisation SQL.</li>
+            <li>Création d’exercices pratiques pour les étudiants.</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- FORMATION -->
   <section id="education" class="section">
-    <h2>Formation</h2>
-    <div class="timeline-item">
-      <h3>HEC Montréal — Certificat en exploitation et valorisation des données</h3>
-      <p>Début : Hiver 2026</p>
-    </div>
-    <div class="timeline-item">
-      <h3>University of Michigan (Coursera) — Building Database Applications in PHP</h3>
-      <p>2025</p>
-    </div>
-    <div class="timeline-item">
-      <h3>Microsoft (Coursera) — Preparing Data for Analysis with Excel</h3>
-      <p>2025</p>
-    </div>
-    <div class="timeline-item">
-      <h3>Maîtrise en sciences de l’informatique — Institut Supérieur d’Informatique du Kef</h3>
-      <p>2021</p>
+    <div class="container">
+      <h2>Formation</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>Certificat – HEC Montréal</h3>
+          <p>Exploitation & valorisation des données – début Hiver 2026</p>
+        </div>
+        <div class="timeline-item">
+          <h3>University of Michigan (Coursera)</h3>
+          <p>Building Database Applications en PHP – 2025</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Microsoft / Coursera</h3>
+          <p>Preparing Data for Analysis with Excel – 2025</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Maîtrise – ISET Kef</h3>
+          <p>Multimédia & Web – 2021</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- COMPÉTENCES -->
   <section id="skills" class="section">
-    <h2>Compétences</h2>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <h4>Développement Web</h4>
-        <p>HTML, CSS, JS, PHP, MySQL</p>
-      </div>
-      <div class="skill-card">
-        <h4>Analyse de données</h4>
-        <p>Power BI, Excel avancé, Google Sheets</p>
-      </div>
-      <div class="skill-card">
-        <h4>Outils & Technologies</h4>
-        <p>Git, GitHub, Canva, XAMPP, WAMP</p>
-      </div>
-      <div class="skill-card">
-        <h4>Compétences clés</h4>
-        <p>Communication, autonomie, esprit analytique, travail en équipe</p>
+    <div class="container">
+      <h2>Compétences</h2>
+      <div class="skills-grid">
+        <div class="skill-card">HTML / CSS / JS</div>
+        <div class="skill-card">PHP / SQL / MySQL</div>
+        <div class="skill-card">Excel / Power BI</div>
+        <div class="skill-card">Analyse & nettoyage de données</div>
+        <div class="skill-card">Git / GitHub</div>
+        <div class="skill-card">Canva, Automatisation (Excel)</div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact" class="section contact-section">
-    <h2>Contact</h2>
-    <div class="contact-box">
-      <p>📧 <a href="mailto:ameni1tlili@gmail.com">ameni1tlili@gmail.com</a></p>
-      <p>📞 438-855-1310</p>
-      <p>🔗 <a href="https://www.linkedin.com/in/amanitlili" target="_blank">LinkedIn</a></p>
-      <a href="mailto:ameni1tlili@gmail.com" class="contact-btn">Me contacter</a>
+    <div class="container">
+      <h2>Contact</h2>
+      <div class="contact-box">
+        <p>📧 <a href="mailto:ameni1tlili@gmail.com">ameni1tlili@gmail.com</a></p>
+        <p>📞 438-855-1310</p>
+        <p>🔗 <a href="https://www.linkedin.com/in/amanitlili" target="_blank">LinkedIn</a></p>
+      </div>
     </div>
   </section>
 
-  <footer>
-    2025 &copy; Amani Tlili
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Amani Tlili</p>
+    </div>
   </footer>
 
   <script src="js/main.js"></script>
