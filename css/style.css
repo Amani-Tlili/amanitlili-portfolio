@@ -1,10 +1,10 @@
-@import url('https://www.google.com/search?q=https://fonts.googleapis.com/css2%3Ffamily%3DInter:wght%40300%3B400%3B600%3B700%3B800%26display%3Dswap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
 
 :root {
---primary-color: #4f46e5; /* Indigo 600 /
---accent-color: #6366f1; / Indigo 500 /
---light-bg: #f9fafb; / Gray 50 /
---text-color: #1f2937; / Gray 800 */
+--primary-color: #4f46e5;
+--accent-color: #6366f1; 
+--light-bg: #f9fafb;
+--text-color: #1f2937;
 }
 
 body {
@@ -12,13 +12,13 @@ font-family: 'Inter', sans-serif;
 background-color: var(--light-bg);
 color: var(--text-color);
 line-height: 1.75;
-scroll-behavior: smooth; /* Pour le défilement fluide */
+scroll-behavior: smooth; 
 }
 
-/* Styles personnalisés pour le portfolio /
+
 .progress-bar-container {
 height: 8px;
-background-color: #e5e7eb; / Gray 200 */
+background-color: #e5e7eb; 
 border-radius: 4px;
 overflow: hidden;
 margin-top: 4px;
@@ -30,10 +30,9 @@ transition: width 0.5s ease-in-out;
 border-radius: 4px;
 }
 
-/* Timeline Styling /
 .timeline {
 position: relative;
-padding-left: 1.5rem; / Espace pour la ligne verticale /
+padding-left: 1.5rem; 
 }
 .timeline::before {
 content: '';
@@ -42,14 +41,14 @@ top: 0;
 left: 0.5rem;
 width: 4px;
 height: 100%;
-background-color: #e0e7ff; / Indigo 100 /
+background-color: #e0e7ff;
 border-radius: 2px;
 }
 .timeline-item {
 position: relative;
-padding: 1rem 0 1rem 1.5rem; / Ajout d'espace autour du contenu /
+padding: 1rem 0 1rem 1.5rem;
 margin-bottom: 2rem;
-/ border-left: 2px solid transparent; <- Ce style est géré par ::before /
+/* border-left: 2px solid transparent; <- Ce style est géré par ::before */
 }
 .timeline-item h3 {
 font-weight: 600;
