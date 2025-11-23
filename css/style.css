@@ -1,14 +1,20 @@
 /* Importation d'une police Google Font similaire à celle du modèle Meelo (ex: Inter) */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
     --font-primary: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    --color-text: #171717; /* Noir très foncé */
-    --color-background: #f8f8f8; /* Blanc cassé */
-    --color-accent: #000000; /* Noir pur pour les accents et les liens */
-    --color-border: #e0e0e0; /* Gris clair pour les bordures */
+    --color-text: #171717;
+    --color-background: #fcfcfc; /* Fond très clair */
+    --color-accent: #000000;
+    --color-border: #e0e0e0;
     --max-width: 1200px;
     --section-padding: 100px;
+    
+    /* PALETTE MEELO V2 (Violet et Orange) */
+    --color-soft-purple: #9a88cf; /* Violet pour la forme organique et les accents */
+    --color-soft-lavender: #E8E7FB; /* Fond des blocs impairs (Ex: Accueil, Profil) */
+    --color-soft-pink: #FBE8F1;     /* Fond des blocs pairs (Ex: Compétences, Expérience) */
+    --color-orange-accent: #FF7F50; /* Orange vif pour le surlignement / badge */
 }
 
 /* Base Reset & Typography */
@@ -48,33 +54,22 @@ a:hover {
     opacity: 0.8;
 }
 
-ul {
-    list-style: none;
-}
-
 /* Headers */
 h1 {
     font-size: 3.8rem;
-    font-weight: 600;
+    font-weight: 800;
     line-height: 1.15;
     margin-bottom: 25px;
 }
 
 h2 {
     font-size: 2.8rem;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.2;
     margin-bottom: 30px;
 }
 
-h3 {
-    font-size: 1.8rem;
-    font-weight: 500;
-    margin-bottom: 20px;
-}
-
-
-/* --- Header (Top bar avec switch langue) --- */
+/* --- Header & Navigation --- */
 .meelo-header {
     padding: 20px 0;
     position: sticky;
@@ -84,36 +79,15 @@ h3 {
     border-bottom: 1px solid var(--color-border);
 }
 
-.meelo-header .container {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.lang-switch {
-    font-size: 0.9rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    padding: 5px 10px;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    transition: all 0.2s ease;
-}
-
-.lang-switch:hover {
-    border-color: var(--color-accent);
-    background-color: #f0f0f0;
-}
-
-/* --- Navigation Principale (Menu horizontal) --- */
 .meelo-nav {
     border-bottom: 1px solid var(--color-border);
     padding: 15px 0;
     margin-bottom: var(--section-padding);
     position: sticky;
-    top: 61px;
+    top: 61px; /* Sous le header */
     background: var(--color-background);
     z-index: 999;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 .meelo-nav .container {
@@ -128,9 +102,21 @@ h3 {
     font-size: 1rem;
     padding: 5px 0;
     position: relative;
+    transition: all 0.3s ease;
 }
 
-/* Soulignement animé */
+/* Style du lien actif (Couleur Violette) */
+.meelo-nav a.active-section {
+    color: var(--color-soft-purple); 
+    font-weight: 700;
+}
+/* Soulignement reste actif sur le lien actif */
+.meelo-nav a.active-section::after {
+    background-color: var(--color-soft-purple) !important;
+    width: 100%;
+}
+
+/* Soulignement au survol */
 .meelo-nav a::after {
     content: '';
     position: absolute;
@@ -145,77 +131,136 @@ h3 {
     width: 100%;
 }
 
-/* --- Hero Section (Accueil) --- */
+
+/* --- Hero Section (Accueil) - Mise en Page GRILLE et Couleurs --- */
 .meelo-hero {
-    padding: var(--section-padding) 0 calc(var(--section-padding) * 1.5);
-    text-align: left;
+    background-color: var(--color-soft-lavender); 
+    padding: var(--section-padding) 0;
 }
 
-.meelo-hero .role-intro {
-    font-size: 1.1rem;
-    font-weight: 500;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-bottom: 25px;
-    color: #555;
-}
-
-.meelo-hero p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin-top: 20px;
-    color: #444;
-}
-
-.social-links {
-    margin-top: 40px;
-    display: flex;
-    gap: 30px;
-}
-
-.social-links a {
-    font-size: 1.1rem;
-    font-weight: 500;
-    display: flex;
+.hero-content-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr; /* Texte à gauche, Photo à droite */
+    gap: 50px;
     align-items: center;
 }
 
-.social-links i {
-    margin-right: 10px;
-    font-size: 1.3rem;
+.hello-tag {
+    display: inline-block;
+    background: var(--color-background);
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: 1px solid var(--color-border);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
-/* --- Section Image "Parallax" --- */
-.parallax-section {
-    /* REMPLACER CE LIEN PAR VOTRE IMAGE DANS UN DOSSIER 'img/' */
-    background-image: url('https://via.placeholder.com/1920x800/dcdcdc/808080?text=Amani+Tlili+Portfolio+Image'); 
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* L'effet Parallax/Fixe */
-    height: 600px;
+/* Surlignement Orange sous le titre */
+.hero-text-content h1 {
+    position: relative;
+    display: inline-block;
+}
+.hero-text-content h1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    height: 10px;
+    width: 100%; 
+    background: var(--color-orange-accent);
+    opacity: 0.5;
+    z-index: -1;
+    transform: rotate(-1deg);
+}
+
+/* --- Conteneur d'Image Organique (Style Meelo) --- */
+.organic-hero-image {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    aspect-ratio: 1 / 1;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    justify-self: end;
+}
+
+/* Forme Organique (la tache violette) */
+.organic-shape {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--color-soft-purple);
+    border-radius: 50%;
+    /* Forme organique complexe */
+    clip-path: polygon(50% 0%, 100% 38%, 80% 80%, 30% 100%, 0% 65%, 20% 20%);
+    transform: scale(1.1); 
+    z-index: 1;
+    transition: transform 0.8s ease-in-out;
+}
+.organic-shape:hover {
+    transform: scale(1.1) rotate(2deg);
+}
+
+/* Votre Photo */
+.profile-photo-meelo {
+    position: relative;
+    width: 85%;
+    height: 85%;
+    object-fit: cover;
+    border-radius: 50%; 
+    z-index: 2;
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2); 
+    transition: transform 0.5s ease;
+}
+.profile-photo-meelo:hover {
+    transform: scale(1.03);
+}
+
+/* Badge 'Disponible' */
+.availability-badge {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    padding: 10px;
+    background: var(--color-orange-accent);
     color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-    margin-bottom: var(--section-padding);
-}
-
-.parallax-section h2 {
-    font-size: 3.5rem;
+    border: 3px solid var(--color-background);
+    border-radius: 10px;
+    font-size: 0.9rem;
     font-weight: 700;
-    text-align: center;
-    max-width: 800px;
+    letter-spacing: 1px;
+    z-index: 3;
+    animation: pulse 2s infinite; 
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
 
+/* --- Sections Générales --- */
 
-/* --- Sections Générales (Animation au Scroll) --- */
 .meelo-section {
     padding: var(--section-padding) 0;
-    border-bottom: 1px solid var(--color-border);
-    opacity: 0; /* Caché par défaut pour l'animation */
-    transform: translateY(20px); /* Légèrement décalé vers le bas */
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Animation douce */
+    /* Bordure et coins arrondis */
+    border: 1px solid var(--color-border);
+    border-radius: 15px; 
+    margin-bottom: var(--section-padding);
+    
+    /* Animation de fade-in */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* ALTERNANCE DE COULEUR DES SECTIONS */
+.meelo-section:nth-child(odd) {
+    background-color: var(--color-soft-lavender); 
+}
+.meelo-section:nth-child(even) {
+    background-color: var(--color-soft-pink);
 }
 
 .meelo-section.is-visible {
@@ -223,277 +268,56 @@ h3 {
     transform: translateY(0);
 }
 
-.meelo-section:last-of-type { 
-    border-bottom: none;
+/* Masquer l'ancienne photo dans #profil/profile */
+#profil .profile-photo, #profile .profile-photo {
+    display: none;
 }
 
-
-/* Section Profil */
-.meelo-section .description {
-    font-size: 1.3rem;
-    line-height: 1.7;
-    max-width: 800px;
-    margin-bottom: 50px;
-    color: #333;
-}
-
-.key-skills h3 {
-    font-size: 1.6rem;
-    margin-bottom: 20px;
-    color: var(--color-accent);
-}
-
-.key-skills p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #555;
-}
-
-
-/* Section Compétences */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 50px;
-}
-
-.skills-grid h3 {
-    font-size: 1.5rem;
-    border-bottom: 1px solid var(--color-border);
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    color: var(--color-accent);
-}
-
-.skills-grid li {
-    padding: 8px 0;
-    font-size: 1.05rem;
-    color: #333;
-    position: relative;
-}
-
-/* Puces personnalisées */
-.skills-grid li::before {
-    content: "•";
-    color: var(--color-accent);
-    position: absolute;
-    left: 0;
-    top: 8px;
-    transform: translateX(-120%);
-}
-
-
-/* Section Projets */
+/* Section Projets - Changement de couleur de survol */
 .project-item {
-    padding: 40px 0;
+    padding: 40px 10px;
     border-top: 1px solid var(--color-border);
     transition: background-color 0.3s ease;
 }
 
 .project-item:hover {
-    background-color: #f0f0f0; /* Changement de couleur au survol */
+    background-color: var(--color-soft-pink); 
+    border-radius: 15px;
 }
-
-.project-item h3 {
-    font-size: 2.2rem;
-    font-weight: 600;
-    margin-bottom: 5px;
-    color: var(--color-accent);
-}
-
-.project-item .meta {
-    font-size: 1rem;
-    color: #888;
-    margin-bottom: 20px;
-}
-
-.project-link {
-    display: inline-block;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--color-accent);
-    position: relative;
-}
-
-/* Soulignement animé pour les liens de projet */
-.project-link::after { 
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 1px;
-    bottom: -3px;
-    left: 0;
-    background-color: var(--color-accent);
-    transition: width 0.3s ease-out;
-}
-.project-link:hover::after {
-    width: 100%;
-}
-
-
-/* Section Expérience et Formation */
-.experience-item, .education-item {
-    margin-bottom: 40px;
-    padding-bottom: 20px;
-    border-bottom: 1px dashed #eee;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.experience-item:last-child, .education-item:last-child {
-    border-bottom: none;
-}
-
-.experience-item .title, .education-item .title {
-    font-size: 1.6rem;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: var(--color-accent);
-}
-
-.experience-item .date-location, .education-item .date-location {
-    font-size: 1rem;
-    color: #777;
-    margin-bottom: 15px;
-}
-
-.experience-item ul {
-    padding-left: 20px;
-    list-style: disc;
-}
-.experience-item li {
-    padding: 4px 0;
-    font-size: 1.05rem;
-    color: #333;
-}
-
 
 /* Section Contact */
 .meelo-contact {
+    background-color: var(--color-soft-lavender); 
     text-align: center;
     padding: var(--section-padding) 0;
     border-bottom: 1px solid var(--color-border);
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    border-radius: 15px;
 }
-
-.meelo-contact.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.contact-details p {
-    font-size: 1.3rem;
-    margin: 15px 0;
-    color: #333;
-}
-
-.contact-details .language-detail {
-    font-size: 1.1rem;
-    font-style: italic;
-    color: #666;
-    margin-top: 30px;
-}
-
-
-/* Footer */
-.meelo-footer {
-    padding: 40px 0;
-    font-size: 0.95rem;
-    color: #555;
-}
-
-.meelo-footer .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.meelo-footer .footer-nav a {
-    margin-left: 30px;
-    color: #555;
-    font-weight: 500;
-}
-.meelo-footer .footer-nav a:first-child {
-    margin-left: 0;
-}
-
 
 /* --- Responsivité --- */
 @media (max-width: 992px) {
-    .container {
-        padding: 0 25px;
+    .hero-content-grid {
+        grid-template-columns: 1fr; /* Passage à une seule colonne */
     }
-    h1 {
-        font-size: 3rem;
-    }
-    h2 {
-        font-size: 2.2rem;
-    }
-    .meelo-hero {
-        padding: 80px 0 100px;
+    .organic-hero-image {
+        margin-top: 50px;
+        justify-self: center;
     }
     .meelo-nav .container {
         justify-content: flex-start;
     }
-    .meelo-nav a {
-        font-size: 0.95rem;
-        padding: 5px 10px;
-        margin: 0 5px 5px 0;
-    }
-    .meelo-section {
-        padding: 70px 0;
-    }
-    .parallax-section {
-        height: 400px;
-    }
-    .project-item h3 {
-        font-size: 1.8rem;
-    }
-    .meelo-footer .container {
-        flex-direction: column;
-        text-align: center;
-    }
-    .meelo-footer .footer-nav {
-        margin-top: 20px;
-    }
-    .meelo-footer .footer-nav a {
-        margin: 0 10px;
-    }
 }
-
 @media (max-width: 600px) {
-    .container {
-        padding: 0 20px;
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 1.8rem; }
+    .organic-hero-image {
+        max-width: 300px;
     }
-    h1 {
-        font-size: 2.5rem;
-    }
-    h2 {
-        font-size: 1.8rem;
-    }
-    .meelo-hero {
-        padding: 60px 0 80px;
-    }
-    .social-links {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .meelo-nav {
-        padding: 10px 0;
-        margin-bottom: 60px;
-        top: 51px;
-    }
-    .meelo-section {
-        padding: 50px 0;
-    }
-    .parallax-section {
-        height: 300px;
-    }
-    .project-item h3 {
-        font-size: 1.5rem;
+    .hero-text-content h1::after {
+        height: 8px; /* Réduire la taille du trait */
+        bottom: 3px;
     }
 }
