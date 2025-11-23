@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // Remplacer les sélecteurs meelo- par amani-
+   
     const header = document.querySelector('.amani-header');
     const nav = document.querySelector('.amani-nav');
     
