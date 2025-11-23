@@ -1,20 +1,20 @@
-/* Importation d'une police Google Font similaire à celle du modèle Meelo (ex: Inter) */
+/* Importation d'une police Google Font similaire à celle du modèle Meelo (Inter) */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
     --font-primary: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     --color-text: #171717;
-    --color-background: #fcfcfc; /* Fond très clair */
+    --color-background: #fcfcfc;
     --color-accent: #000000;
     --color-border: #e0e0e0;
     --max-width: 1200px;
     --section-padding: 100px;
     
     /* PALETTE MEELO V2 (Violet et Orange) */
-    --color-soft-purple: #9a88cf; /* Violet pour la forme organique et les accents */
-    --color-soft-lavender: #E8E7FB; /* Fond des blocs impairs (Ex: Accueil, Profil) */
-    --color-soft-pink: #FBE8F1;     /* Fond des blocs pairs (Ex: Compétences, Expérience) */
-    --color-orange-accent: #FF7F50; /* Orange vif pour le surlignement / badge */
+    --color-soft-purple: #9a88cf; 
+    --color-soft-lavender: #E8E7FB; 
+    --color-soft-pink: #FBE8F1;     
+    --color-orange-accent: #FF7F50; 
 }
 
 /* Base Reset & Typography */
@@ -84,7 +84,7 @@ h2 {
     padding: 15px 0;
     margin-bottom: var(--section-padding);
     position: sticky;
-    top: 61px; /* Sous le header */
+    top: 61px;
     background: var(--color-background);
     z-index: 999;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
@@ -105,12 +105,11 @@ h2 {
     transition: all 0.3s ease;
 }
 
-/* Style du lien actif (Couleur Violette) */
+/* Style du lien actif (appliqué par JS) */
 .meelo-nav a.active-section {
     color: var(--color-soft-purple); 
     font-weight: 700;
 }
-/* Soulignement reste actif sur le lien actif */
 .meelo-nav a.active-section::after {
     background-color: var(--color-soft-purple) !important;
     width: 100%;
@@ -132,7 +131,7 @@ h2 {
 }
 
 
-/* --- Hero Section (Accueil) - Mise en Page GRILLE et Couleurs --- */
+/* --- Hero Section (Accueil) --- */
 .meelo-hero {
     background-color: var(--color-soft-lavender); 
     padding: var(--section-padding) 0;
@@ -140,7 +139,7 @@ h2 {
 
 .hero-content-grid {
     display: grid;
-    grid-template-columns: 3fr 2fr; /* Texte à gauche, Photo à droite */
+    grid-template-columns: 3fr 2fr; 
     gap: 50px;
     align-items: center;
 }
@@ -193,7 +192,6 @@ h2 {
     height: 100%;
     background: var(--color-soft-purple);
     border-radius: 50%;
-    /* Forme organique complexe */
     clip-path: polygon(50% 0%, 100% 38%, 80% 80%, 30% 100%, 0% 65%, 20% 20%);
     transform: scale(1.1); 
     z-index: 1;
@@ -244,7 +242,6 @@ h2 {
 
 .meelo-section {
     padding: var(--section-padding) 0;
-    /* Bordure et coins arrondis */
     border: 1px solid var(--color-border);
     border-radius: 15px; 
     margin-bottom: var(--section-padding);
@@ -275,7 +272,7 @@ h2 {
 
 /* Section Projets - Changement de couleur de survol */
 .project-item {
-    padding: 40px 10px;
+    padding: 40px 0;
     border-top: 1px solid var(--color-border);
     transition: background-color 0.3s ease;
 }
@@ -300,14 +297,11 @@ h2 {
 /* --- Responsivité --- */
 @media (max-width: 992px) {
     .hero-content-grid {
-        grid-template-columns: 1fr; /* Passage à une seule colonne */
+        grid-template-columns: 1fr;
     }
     .organic-hero-image {
         margin-top: 50px;
         justify-self: center;
-    }
-    .meelo-nav .container {
-        justify-content: flex-start;
     }
 }
 @media (max-width: 600px) {
@@ -317,7 +311,7 @@ h2 {
         max-width: 300px;
     }
     .hero-text-content h1::after {
-        height: 8px; /* Réduire la taille du trait */
+        height: 8px;
         bottom: 3px;
     }
 }
