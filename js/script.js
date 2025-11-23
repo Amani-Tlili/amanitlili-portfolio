@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scroll for anchor links
+    
+    // 1. Navigation fluide (Smooth scroll) et correction du décalage avec le header fixe
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -8,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (targetId && targetId !== '#') {
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    // Calculer la position pour que la section ne soit pas cachée par le header fixe
+                    // Calculer la position en tenant compte des headers fixes (top bar + nav)
                     const headerOffset = document.querySelector('.meelo-header').offsetHeight + document.querySelector('.meelo-nav').offsetHeight;
                     const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
                     const offsetPosition = elementPosition - headerOffset - 20; // -20 pour un petit padding
@@ -22,20 +23,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Intersection Observer for fade-in animations
+    // 2. Intersection Observer pour l'animation de fade-in au scroll
     const sections = document.querySelectorAll('.meelo-section, .meelo-contact');
 
     const observerOptions = {
-        root: null, // viewport
+        root: null, // Le viewport (fenêtre d'affichage)
         rootMargin: '0px',
-        threshold: 0.1 // 10% de la section doit être visible
+        threshold: 0.1 // L'animation se déclenche dès que 10% de la section est visible
     };
 
     const sectionObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target); // Arrêter d'observer après l'animation
+                observer.unobserve(entry.target); // Arrêter d'observer après la première apparition
             }
         });
     }, observerOptions);
@@ -44,5 +45,5 @@ document.addEventListener('DOMContentLoaded', () => {
         sectionObserver.observe(section);
     });
 
-    console.log("Amani Tlili Portfolio Loaded with Meelo-inspired styles!");
+    console.log("Amani Tlili Portfolio Loaded with Meelo-inspired styles and animations!");
 });
