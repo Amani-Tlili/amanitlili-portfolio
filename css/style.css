@@ -315,3 +315,48 @@ h2 {
         bottom: 3px;
     }
 }
+
+/* --- Footer --- */
+.meelo-footer {
+    padding: 40px 0;
+    font-size: 0.95rem;
+    color: #555;
+    /* AJOUT CRUCIAL : Augmente la zone de défilement pour déclencher l'animation de #contact */
+    margin-top: var(--section-padding); /* Assure un bon espacement avec le contact */
+    margin-bottom: 200px; /* Ajoute de l'espace vide pour que #contact entre dans le viewport */
+}
+
+.meelo-footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.meelo-footer .footer-nav a {
+    margin-left: 30px;
+    color: #555;
+    font-weight: 500;
+}
+.meelo-footer .footer-nav a:first-child {
+    margin-left: 0;
+}
+
+/* --- Responsivité --- */
+@media (max-width: 992px) {
+    /* ... (reste inchangé) ... */
+    .meelo-footer {
+        margin-bottom: 100px; /* Réduire la marge sur mobile */
+    }
+    .meelo-footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .meelo-footer .footer-nav {
+        margin-top: 20px;
+    }
+    .meelo-footer .footer-nav a {
+        margin: 0 10px;
+    }
+}
+/* ... (le reste des media queries) ... */
