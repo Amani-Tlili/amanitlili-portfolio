@@ -1,13 +1,10 @@
-/* Importation d'une police Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
-
+/* Importation d'une police sans serif moderne (ex: Inter, ou system-ui) */
 :root {
-    --primary-color: #007bff; /* Bleu vif pour l'accent */
-    --secondary-color: #6c757d; /* Gris pour le texte secondaire */
-    --background-light: #f8f9fa; /* Fond clair */
-    --background-dark: #343a40; /* Fond foncé pour le header/footer */
-    --text-color: #212529; /* Couleur du texte principal */
-    --container-width: 1100px;
+    --font-primary: 'system-ui', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+    --color-text: #1a1a1a;
+    --color-background: #ffffff;
+    --color-accent: #000000;
+    --max-width: 1200px;
 }
 
 /* Styles de base */
@@ -18,204 +15,283 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-primary);
     line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--background-light);
+    color: var(--color-text);
+    background-color: var(--color-background);
+    text-rendering: optimizeLegibility;
 }
 
 .container {
-    max-width: var(--container-width);
-    margin: auto;
-    padding: 0 20px;
-    overflow: hidden;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 40px;
 }
 
 a {
-    color: var(--primary-color);
+    color: var(--color-accent);
     text-decoration: none;
+    transition: opacity 0.3s;
 }
 
 a:hover {
-    text-decoration: underline;
+    opacity: 0.6;
 }
 
 ul {
     list-style: none;
 }
 
-/* Header et Navigation */
-header {
-    background: var(--background-dark);
-    color: white;
-    padding: 1rem 0;
+/* 1. Header et Navigation */
+.meelo-header {
+    padding: 20px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
+    background: var(--color-background);
+    border-bottom: 1px solid #eee;
 }
 
-header .container {
+.meelo-header .container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.lang-switch {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Navigation principale */
+.meelo-nav {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+    margin-bottom: 80px;
+    position: sticky;
+    top: 61px; /* Sous le header */
+    background: var(--color-background);
+    z-index: 999;
+}
+
+.meelo-nav .container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
-header h1 {
-    font-size: 1.8rem;
+.meelo-nav a {
+    font-weight: 500;
+    font-size: 1.0rem;
+    padding: 5px 0;
 }
 
-header nav ul {
-    display: flex;
+/* 2. Section Héro/Accueil (Style Meelo) */
+.meelo-hero {
+    padding: 100px 0 150px;
 }
 
-header nav ul li a {
-    color: white;
-    padding: 0.5rem 1rem;
-    display: block;
-    transition: background 0.3s;
+.meelo-hero .role-intro {
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
 }
 
-header nav ul li a:hover {
-    background: var(--primary-color);
-    text-decoration: none;
-}
-
-/* Section Héro/Accueil */
-.hero {
-    background: var(--primary-color);
-    color: white;
-    padding: 80px 0;
-    text-align: center;
-}
-
-.hero h2 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+.meelo-hero h1 {
+    font-size: 3.5rem; /* Grosse typographie */
+    font-weight: 700;
+    line-height: 1.1;
+    max-width: 800px;
+    margin-bottom: 40px;
 }
 
 .social-links a {
-    color: white;
+    font-size: 1.1rem;
+    margin-right: 25px;
+    font-weight: 500;
+}
+
+.social-links i {
+    margin-right: 8px;
+}
+
+/* 3. Sections Générales (Profil, Compétences, Expérience) */
+.meelo-section {
+    padding: 40px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.meelo-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    max-width: 400px; /* Aligné avec la colonne de gauche */
+}
+
+/* Section Profil */
+.meelo-section .description {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin-bottom: 50px;
+}
+
+.key-skills h3 {
     font-size: 1.5rem;
-    margin: 0 10px;
-    transition: opacity 0.3s;
+    margin-bottom: 15px;
 }
 
-.social-links a:hover {
-    opacity: 0.8;
-}
-
-/* Sections générales */
-section {
-    padding: 60px 0;
-}
-
-section:nth-child(even) {
-    background: white; /* Alterner le fond pour la lisibilité */
-}
-
-section h3 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: var(--primary-color);
-    text-align: center;
+.key-skills p {
+    font-style: italic;
+    color: #444;
 }
 
 /* Section Compétences */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    text-align: left;
+    gap: 60px;
 }
 
-.skills-grid h4 {
-    color: var(--text-color);
-    margin-bottom: 10px;
-    border-bottom: 2px solid var(--secondary-color);
+.skills-grid h3 {
+    font-size: 1.4rem;
+    border-bottom: 2px solid #ddd;
     padding-bottom: 5px;
+    margin-bottom: 15px;
 }
 
-.skills-grid ul {
+.skills-grid li {
+    padding: 5px 0;
+}
+
+/* Section Projets */
+.meelo-projects {
+    padding-bottom: 80px;
+}
+
+.project-item {
+    padding: 40px 0;
+    border-top: 1px solid #eee;
+}
+
+.project-item:last-child {
+    border-bottom: none;
+}
+
+.project-item h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.project-item .meta {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+
+/* Section Expérience et Formation (Mise en page simple) */
+.experience-item, .education-item {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.experience-item .title, .education-item .title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.experience-item .date-location, .education-item .date-location {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.experience-item ul {
     padding-left: 20px;
     list-style: disc;
 }
 
-/* Section Expérience */
-.job {
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 1px dashed var(--secondary-color);
-}
-
-.job:last-child {
-    border-bottom: none;
-}
-
-.job h4 {
-    font-size: 1.4rem;
-    margin-bottom: 5px;
-    color: var(--text-color);
-}
-
-.job .meta {
-    color: var(--secondary-color);
-    font-style: italic;
-    margin-bottom: 10px;
-}
-
-.job ul {
-    padding-left: 40px;
-    list-style: square;
-}
-
 /* Section Contact */
-.contact ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+.meelo-contact {
+    text-align: center;
+    padding: 80px 0;
 }
 
-.contact ul li i {
-    color: var(--primary-color);
-    margin-right: 10px;
+.contact-details p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.contact-details .language-detail {
+    font-style: italic;
+    color: #555;
+    margin-top: 20px;
 }
 
 /* Footer */
-footer {
-    background: var(--background-dark);
-    color: white;
-    text-align: center;
-    padding: 1rem 0;
+.meelo-footer {
+    border-top: 1px solid #eee;
+    padding: 20px 0;
     font-size: 0.9rem;
 }
 
-/* Styles pour la Responsivité */
-@media (max-width: 768px) {
-    header .container {
-        flex-direction: column;
+.meelo-footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.meelo-footer .footer-nav a {
+    margin-left: 20px;
+}
+
+/* 4. Responsivité */
+@media (max-width: 900px) {
+    .container {
+        padding: 0 20px;
     }
 
-    header nav ul {
-        margin-top: 10px;
+    .meelo-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .meelo-nav {
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        justify-content: initial;
+    }
+
+    .meelo-nav a {
+        padding: 5px 15px;
+    }
+    
+    .meelo-section h2 {
+        font-size: 2rem;
+    }
+
+    .meelo-footer .container {
         flex-direction: column;
         text-align: center;
     }
-
-    header nav ul li a {
-        padding: 0.5rem 0;
+    
+    .meelo-footer p {
+        margin-bottom: 10px;
     }
 
-    .hero {
-        padding: 60px 0;
-    }
-
-    .skills-grid {
-        grid-template-columns: 1fr;
+    .meelo-footer .footer-nav a {
+        margin: 0 10px;
     }
 }
