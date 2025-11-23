@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     const headerOffset = header.offsetHeight + nav.offsetHeight;
                     
                     const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-                    // Défiler juste en dessous des barres fixes
                     const offsetPosition = elementPosition - headerOffset - 20;
 
                     window.scrollTo({
@@ -60,13 +59,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Intersection Observer pour la Navigation Active (Changement de couleur des <a>)
     const navLinks = document.querySelectorAll('.meelo-nav a');
     
-    // Lister toutes les sections à observer (français et anglais)
+    // Liste de toutes les sections à observer (français et anglais)
     const sectionsToObserve = document.querySelectorAll('#profil, #competences, #projets, #experience, #formation, #contact, #profile, #skills, #projects, #experience, #education, #contact');
     
-    // Observer avec une marge négative pour déclencher le changement au bon moment
     const activeObserverOptions = {
         root: null,
-        // Marge négative égale à la hauteur du header + nav
+        // Marge négative égale à la hauteur du header + nav (déclenchement au passage sous la nav)
         rootMargin: `-${header.offsetHeight + nav.offsetHeight + 1}px 0px 0px 0px`, 
         threshold: 0 
     };
@@ -76,11 +74,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Retirer la classe active de tous les liens
         navLinks.forEach(link => link.classList.remove('active-section'));
         
-        // Trouver la première section visible à partir du haut du document (celle qui vient de passer le rootMargin)
+        // Trouver la première section visible à partir du haut du document
         const visibleSections = entries.filter(entry => entry.isIntersecting);
         
         if (visibleSections.length > 0) {
-            // Trier pour trouver la section la plus haute (la plus pertinente)
+            // Identifier la section la plus haute (la plus pertinente)
             const topSection = visibleSections.reduce((prev, current) => {
                 return (prev.boundingClientRect.top < current.boundingClientRect.top) ? prev : current;
             });
@@ -89,6 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const navLink = document.querySelector(`.meelo-nav a[href="#${id}"]`);
 
             if (navLink) {
+                // Appliquer la couleur violette
                 navLink.classList.add('active-section');
             }
         }
