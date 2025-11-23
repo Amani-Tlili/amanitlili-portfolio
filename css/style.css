@@ -1,5 +1,4 @@
-/* Importation d'une police Google Font similaire à celle du modèle Meelo (ex: Inter ou une variante) */
-/* Pour un rendu exact, il faudrait la police "Switzer" ou "General Sans" de Fontshare, mais "Inter" est une excellente alternative gratuite. */
+/* Importation d'une police Google Font similaire à celle du modèle Meelo (ex: Inter) */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
@@ -35,17 +34,17 @@ body {
 .container {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 0 30px; /* Légèrement réduit pour un look plus aéré */
+    padding: 0 30px;
 }
 
 a {
     color: var(--color-accent);
     text-decoration: none;
-    transition: color 0.3s ease, opacity 0.3s ease; /* Transitions plus douces */
+    transition: color 0.3s ease, opacity 0.3s ease;
 }
 
 a:hover {
-    color: #555; /* Assombrir légèrement ou changer de couleur au survol */
+    color: #555; 
     opacity: 0.8;
 }
 
@@ -55,8 +54,8 @@ ul {
 
 /* Headers */
 h1 {
-    font-size: 3.8rem; /* Typographie plus grande pour le titre principal */
-    font-weight: 600; /* Plus de Bold */
+    font-size: 3.8rem;
+    font-weight: 600;
     line-height: 1.15;
     margin-bottom: 25px;
 }
@@ -72,12 +71,6 @@ h3 {
     font-size: 1.8rem;
     font-weight: 500;
     margin-bottom: 20px;
-}
-
-h4 {
-    font-size: 1.3rem;
-    font-weight: 500;
-    margin-bottom: 10px;
 }
 
 
@@ -118,7 +111,7 @@ h4 {
     padding: 15px 0;
     margin-bottom: var(--section-padding);
     position: sticky;
-    top: 61px; /* Juste sous le header */
+    top: 61px;
     background: var(--color-background);
     z-index: 999;
 }
@@ -126,8 +119,8 @@ h4 {
 .meelo-nav .container {
     display: flex;
     justify-content: space-between;
-    gap: 20px; /* Espace entre les liens */
-    flex-wrap: wrap; /* Permet aux liens de passer à la ligne sur mobile */
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .meelo-nav a {
@@ -135,20 +128,21 @@ h4 {
     font-size: 1rem;
     padding: 5px 0;
     position: relative;
-    /* Soulignement animé */
-    &::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: -5px;
-        left: 0;
-        background-color: var(--color-accent);
-        transition: width 0.3s ease-out;
-    }
-    &:hover::after {
-        width: 100%;
-    }
+}
+
+/* Soulignement animé */
+.meelo-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--color-accent);
+    transition: width 0.3s ease-out;
+}
+.meelo-nav a:hover::after {
+    width: 100%;
 }
 
 /* --- Hero Section (Accueil) --- */
@@ -191,18 +185,18 @@ h4 {
     font-size: 1.3rem;
 }
 
-/* --- Section Image "Parallax" (à adapter avec votre image) --- */
-/* Ceci est une section supplémentaire pour démontrer l'effet parallax */
+/* --- Section Image "Parallax" --- */
 .parallax-section {
-    background-image: url('https://via.placeholder.com/1920x800/dcdcdc/808080?text=Amani+Tlili+Portfolio+Image'); /* Placeholder */
+    /* REMPLACER CE LIEN PAR VOTRE IMAGE DANS UN DOSSIER 'img/' */
+    background-image: url('https://via.placeholder.com/1920x800/dcdcdc/808080?text=Amani+Tlili+Portfolio+Image'); 
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Effet parallax */
-    height: 600px; /* Grande hauteur pour voir l'effet */
+    background-attachment: fixed; /* L'effet Parallax/Fixe */
+    height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white; /* Texte blanc sur l'image */
+    color: white;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
     margin-bottom: var(--section-padding);
 }
@@ -215,13 +209,13 @@ h4 {
 }
 
 
-/* --- Sections Générales (Profil, Compétences, Expérience, Formation, Projets) --- */
+/* --- Sections Générales (Animation au Scroll) --- */
 .meelo-section {
     padding: var(--section-padding) 0;
     border-bottom: 1px solid var(--color-border);
     opacity: 0; /* Caché par défaut pour l'animation */
     transform: translateY(20px); /* Légèrement décalé vers le bas */
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Animation */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Animation douce */
 }
 
 .meelo-section.is-visible {
@@ -229,7 +223,7 @@ h4 {
     transform: translateY(0);
 }
 
-.meelo-section:last-of-type { /* Supprimer la bordure du dernier élément avant le footer */
+.meelo-section:last-of-type { 
     border-bottom: none;
 }
 
@@ -271,39 +265,33 @@ h4 {
     color: var(--color-accent);
 }
 
-.skills-grid ul {
-    padding-left: 20px; /* Indentation légère */
-}
-
 .skills-grid li {
     padding: 8px 0;
     font-size: 1.05rem;
     color: #333;
     position: relative;
-    &::before {
-        content: "•"; /* Puce personnalisée */
-        color: var(--color-accent);
-        position: absolute;
-        left: 0;
-        top: 8px;
-        transform: translateX(-120%);
-    }
+}
+
+/* Puces personnalisées */
+.skills-grid li::before {
+    content: "•";
+    color: var(--color-accent);
+    position: absolute;
+    left: 0;
+    top: 8px;
+    transform: translateX(-120%);
 }
 
 
 /* Section Projets */
-.meelo-projects {
-    padding-bottom: var(--section-padding);
-}
-
 .project-item {
     padding: 40px 0;
     border-top: 1px solid var(--color-border);
-    transition: background-color 0.3s ease; /* Effet de survol */
+    transition: background-color 0.3s ease;
 }
 
 .project-item:hover {
-    background-color: #f0f0f0;
+    background-color: #f0f0f0; /* Changement de couleur au survol */
 }
 
 .project-item h3 {
@@ -319,32 +307,27 @@ h4 {
     margin-bottom: 20px;
 }
 
-.project-item p {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-    color: #444;
-    max-width: 800px;
-}
-
 .project-link {
     display: inline-block;
     font-size: 1.1rem;
     font-weight: 600;
     color: var(--color-accent);
     position: relative;
-    &::after { /* Soulignement animé */
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 1px;
-        bottom: -3px;
-        left: 0;
-        background-color: var(--color-accent);
-        transition: width 0.3s ease-out;
-    }
-    &:hover::after {
-        width: 100%;
-    }
+}
+
+/* Soulignement animé pour les liens de projet */
+.project-link::after { 
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -3px;
+    left: 0;
+    background-color: var(--color-accent);
+    transition: width 0.3s ease-out;
+}
+.project-link:hover::after {
+    width: 100%;
 }
 
 
@@ -352,10 +335,10 @@ h4 {
 .experience-item, .education-item {
     margin-bottom: 40px;
     padding-bottom: 20px;
-    border-bottom: 1px dashed #eee; /* Bordure discrète */
+    border-bottom: 1px dashed #eee;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Aligner à gauche */
+    align-items: flex-start;
 }
 
 .experience-item:last-child, .education-item:last-child {
@@ -390,7 +373,7 @@ h4 {
 .meelo-contact {
     text-align: center;
     padding: var(--section-padding) 0;
-    border-bottom: 1px solid var(--color-border); /* Ajouter une bordure */
+    border-bottom: 1px solid var(--color-border);
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -405,10 +388,6 @@ h4 {
     font-size: 1.3rem;
     margin: 15px 0;
     color: #333;
-}
-
-.contact-details p a {
-    font-weight: 500;
 }
 
 .contact-details .language-detail {
@@ -430,7 +409,7 @@ h4 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Pour le responsive */
+    flex-wrap: wrap;
 }
 
 .meelo-footer .footer-nav a {
@@ -454,25 +433,16 @@ h4 {
     h2 {
         font-size: 2.2rem;
     }
-    h3 {
-        font-size: 1.6rem;
-    }
     .meelo-hero {
         padding: 80px 0 100px;
     }
-    .meelo-hero .role-intro {
-        font-size: 1rem;
-    }
-    .meelo-hero p {
-        font-size: 1.1rem;
-    }
     .meelo-nav .container {
-        justify-content: flex-start; /* Aligner à gauche */
+        justify-content: flex-start;
     }
     .meelo-nav a {
         font-size: 0.95rem;
         padding: 5px 10px;
-        margin: 0 5px 5px 0; /* Espacement pour les éléments flex-wrap */
+        margin: 0 5px 5px 0;
     }
     .meelo-section {
         padding: 70px 0;
@@ -480,20 +450,8 @@ h4 {
     .parallax-section {
         height: 400px;
     }
-    .parallax-section h2 {
-        font-size: 2.5rem;
-    }
-    .skills-grid {
-        gap: 40px;
-    }
     .project-item h3 {
         font-size: 1.8rem;
-    }
-    .project-item p {
-        font-size: 1rem;
-    }
-    .contact-details p {
-        font-size: 1.1rem;
     }
     .meelo-footer .container {
         flex-direction: column;
@@ -520,9 +478,6 @@ h4 {
     .meelo-hero {
         padding: 60px 0 80px;
     }
-    .meelo-hero .role-intro {
-        font-size: 0.9rem;
-    }
     .social-links {
         flex-direction: column;
         gap: 15px;
@@ -530,11 +485,7 @@ h4 {
     .meelo-nav {
         padding: 10px 0;
         margin-bottom: 60px;
-        top: 51px; /* Ajuster sticky top */
-    }
-    .meelo-nav a {
-        font-size: 0.9rem;
-        padding: 3px 8px;
+        top: 51px;
     }
     .meelo-section {
         padding: 50px 0;
@@ -542,16 +493,7 @@ h4 {
     .parallax-section {
         height: 300px;
     }
-    .parallax-section h2 {
-        font-size: 2rem;
-    }
     .project-item h3 {
         font-size: 1.5rem;
-    }
-    .experience-item .title, .education-item .title {
-        font-size: 1.3rem;
-    }
-    .contact-details p {
-        font-size: 1rem;
     }
 }
