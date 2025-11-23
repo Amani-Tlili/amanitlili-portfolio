@@ -1,4 +1,4 @@
-/* Importation d'une police Google Font similaire à celle du modèle Meelo (Inter) */
+/* Importation d'une police Google Font similaire à celle du modèle (Inter) */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
@@ -10,7 +10,7 @@
     --max-width: 1200px;
     --section-padding: 100px;
     
-    /* PALETTE MEELO V2 (Violet et Orange) */
+    /* PALETTE V2 (Violet et Orange) */
     --color-soft-purple: #9a88cf; 
     --color-soft-lavender: #E8E7FB; 
     --color-soft-pink: #FBE8F1;     
@@ -69,8 +69,8 @@ h2 {
     margin-bottom: 30px;
 }
 
-/* --- Header & Navigation --- */
-.meelo-header {
+/* --- Header & Navigation (AMANI) --- */
+.amani-header {
     padding: 20px 0;
     position: sticky;
     top: 0;
@@ -79,7 +79,7 @@ h2 {
     border-bottom: 1px solid var(--color-border);
 }
 
-.meelo-nav {
+.amani-nav {
     border-bottom: 1px solid var(--color-border);
     padding: 15px 0;
     margin-bottom: var(--section-padding);
@@ -90,14 +90,14 @@ h2 {
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-.meelo-nav .container {
+.amani-nav .container {
     display: flex;
     justify-content: space-between;
     gap: 20px;
     flex-wrap: wrap;
 }
 
-.meelo-nav a {
+.amani-nav a {
     font-weight: 500;
     font-size: 1rem;
     padding: 5px 0;
@@ -106,17 +106,17 @@ h2 {
 }
 
 /* Style du lien actif (appliqué par JS) */
-.meelo-nav a.active-section {
+.amani-nav a.active-section {
     color: var(--color-soft-purple); 
     font-weight: 700;
 }
-.meelo-nav a.active-section::after {
+.amani-nav a.active-section::after {
     background-color: var(--color-soft-purple) !important;
     width: 100%;
 }
 
 /* Soulignement au survol */
-.meelo-nav a::after {
+.amani-nav a::after {
     content: '';
     position: absolute;
     width: 0;
@@ -126,13 +126,13 @@ h2 {
     background-color: var(--color-accent);
     transition: width 0.3s ease-out;
 }
-.meelo-nav a:hover::after {
+.amani-nav a:hover::after {
     width: 100%;
 }
 
 
-/* --- Hero Section (Accueil) --- */
-.meelo-hero {
+/* --- AMANI Hero Section (Accueil) --- */
+.amani-hero {
     background-color: var(--color-soft-lavender); 
     padding: var(--section-padding) 0;
 }
@@ -173,7 +173,7 @@ h2 {
     transform: rotate(-1deg);
 }
 
-/* --- Conteneur d'Image Organique (Style Meelo) --- */
+/* --- Conteneur d'Image Organique (AMANI Style) --- */
 .organic-hero-image {
     position: relative;
     width: 100%;
@@ -240,29 +240,31 @@ h2 {
 
 /* --- Sections Générales --- */
 
-.meelo-section {
+/* Applique l'état initial invisible à toutes les sections qui contiennent 'amani-section' */
+[class*="amani-section"] { 
     padding: var(--section-padding) 0;
     border: 1px solid var(--color-border);
     border-radius: 15px; 
     margin-bottom: var(--section-padding);
     
-    /* Animation de fade-in */
-    opacity: 0;
-    transform: translateY(20px);
+    /* Animation de fade-in initial, FORCÉE INVISIBLE */
+    opacity: 0 !important;
+    transform: translateY(20px) !important;
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 /* ALTERNANCE DE COULEUR DES SECTIONS */
-.meelo-section:nth-child(odd) {
+.amani-section:nth-of-type(2n + 1) { 
     background-color: var(--color-soft-lavender); 
 }
-.meelo-section:nth-child(even) {
-    background-color: var(--color-soft-pink);
+.amani-section:nth-of-type(2n) { 
+    background-color: var(--color-soft-pink); 
 }
 
-.meelo-section.is-visible {
-    opacity: 1;
-    transform: translateY(0);
+/* RENDRE VISIBLE: CE SÉLECTEUR EST LE SEUL QUI PEUT ÉCRASER L'OPACITÉ 0 */
+[class*="amani-section"].is-visible { 
+    opacity: 1 !important;
+    transform: translateY(0) !important;
 }
 
 /* Masquer l'ancienne photo dans #profil/profile */
@@ -271,27 +273,55 @@ h2 {
 }
 
 /* Section Projets - Changement de couleur de survol */
-.project-item {
+.amani-projects .project-item {
     padding: 40px 0;
     border-top: 1px solid var(--color-border);
     transition: background-color 0.3s ease;
 }
 
-.project-item:hover {
+.amani-projects .project-item:hover {
     background-color: var(--color-soft-pink); 
     border-radius: 15px;
 }
 
-/* Section Contact */
-.meelo-contact {
+/* Section Contact (CORRECTION DÉFINITIVE : Force la visibilité) */
+.amani-contact {
     background-color: var(--color-soft-lavender); 
     text-align: center;
     padding: var(--section-padding) 0;
     border-bottom: 1px solid var(--color-border);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     border-radius: 15px;
+
+    /* DÉSACTIVER L'ANIMATION ET FORCER LA VISIBILITÉ pour le contact */
+    opacity: 1 !important; 
+    transform: translateY(0) !important; 
+    transition: none !important; 
+}
+
+/* --- Footer (AMANI) --- */
+.amani-footer {
+    padding: 40px 0;
+    font-size: 0.95rem;
+    color: #555;
+    /* AJOUT CRUCIAL : Augmente la zone de défilement */
+    margin-top: var(--section-padding); 
+    margin-bottom: 200px; 
+}
+
+.amani-footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.amani-footer .footer-nav a {
+    margin-left: 30px;
+    color: #555;
+    font-weight: 500;
+}
+.amani-footer .footer-nav a:first-child {
+    margin-left: 0;
 }
 
 /* --- Responsivité --- */
@@ -302,6 +332,19 @@ h2 {
     .organic-hero-image {
         margin-top: 50px;
         justify-self: center;
+    }
+    .amani-footer {
+        margin-bottom: 100px; 
+    }
+    .amani-footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .amani-footer .footer-nav {
+        margin-top: 20px;
+    }
+    .amani-footer .footer-nav a {
+        margin: 0 10px;
     }
 }
 @media (max-width: 600px) {
@@ -315,48 +358,3 @@ h2 {
         bottom: 3px;
     }
 }
-
-/* --- Footer --- */
-.meelo-footer {
-    padding: 40px 0;
-    font-size: 0.95rem;
-    color: #555;
-    /* AJOUT CRUCIAL : Augmente la zone de défilement pour déclencher l'animation de #contact */
-    margin-top: var(--section-padding); /* Assure un bon espacement avec le contact */
-    margin-bottom: 200px; /* Ajoute de l'espace vide pour que #contact entre dans le viewport */
-}
-
-.meelo-footer .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.meelo-footer .footer-nav a {
-    margin-left: 30px;
-    color: #555;
-    font-weight: 500;
-}
-.meelo-footer .footer-nav a:first-child {
-    margin-left: 0;
-}
-
-/* --- Responsivité --- */
-@media (max-width: 992px) {
-    /* ... (reste inchangé) ... */
-    .meelo-footer {
-        margin-bottom: 100px; /* Réduire la marge sur mobile */
-    }
-    .meelo-footer .container {
-        flex-direction: column;
-        text-align: center;
-    }
-    .meelo-footer .footer-nav {
-        margin-top: 20px;
-    }
-    .meelo-footer .footer-nav a {
-        margin: 0 10px;
-    }
-}
-/* ... (le reste des media queries) ... */
