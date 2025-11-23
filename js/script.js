@@ -4,14 +4,15 @@ document.addEventListener('DOMContentLoaded', () => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
 
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            // S'assurer que le défilement se fait vers l'élément correct
+            const targetId = this.getAttribute('href');
+            if (targetId && targetId !== '#') {
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
         });
     });
-
-    // Fonctionnalité future : si vous ajoutez des projets,
-    // ce script pourrait gérer le filtrage ou l'affichage modal.
 
     console.log("Amani Tlili Portfolio Chargé!");
 });
