@@ -3,144 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amani Tlili - Portfolio</title>
+    <title>Amani Tlili - Développeuse & Analyste</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
-    <header>
+    <header class="meelo-header">
         <div class="container">
-            <h1>Amani Tlili</h1>
             <nav>
-                <ul>
-                    <li><a href="#accueil">Accueil</a></li>
-                    <li><a href="#profil">Profil</a></li>
-                    <li><a href="#competences">Compétences</a></li>
-                    <li><a href="#experience">Expérience</a></li>
-                    <li><a href="#formation">Formation</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+                <a href="index_en.html" class="lang-switch">EN</a>
             </nav>
         </div>
     </header>
 
-    <section id="accueil" class="hero">
-        <div class="container">
-            <h2>Junior Software Developer & Analyste de Données</h2>
-            <p>Passionnée par le développement de logiciels, l'analyse de données, et l'amélioration des systèmes.</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/amanitlili/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    <main>
+        <section id="accueil" class="meelo-hero">
+            <div class="container">
+                <p class="role-intro">AMANI TLILI | JUNIOR DEVELOPPEUSE & ANALYSTE</p>
+                <h1>Analyse de données et Développement de logiciels pour des systèmes fiables et performants.</h1>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/amanitlili/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub</a>
                 </div>
-        </div>
-    </section>
+            </div>
+        </section>
 
-    <section id="profil" class="about">
-        <div class="container">
-            <h3>🎯 Profil Professionnel</h3>
-            [cite_start]<p>Junior Software Developer motivée, passionnée par le développement et l'amélioration de logiciels[cite: 4, 106].</p>
-            [cite_start]<p>Expérience en programmation web et analyse de données, capable de résoudre des problèmes techniques complexes et d'apprendre rapidement de nouvelles technologies[cite: 5, 99, 107].</p>
-            [cite_start]<p>Rigoureuse, autonome et collaborative, avec une forte capacité à travailler en équipe[cite: 6, 100, 108].</p>
-        </div>
-    </section>
+        <nav class="meelo-nav">
+            <div class="container">
+                <a href="#profil">Profil</a>
+                <a href="#competences">Compétences</a>
+                <a href="#projets">Projets</a>
+                <a href="#experience">Expérience</a>
+                <a href="#formation">Formation</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
 
-    <section id="competences" class="skills">
-        <div class="container">
-            <h3>🧰 Compétences Techniques</h3>
-            <div class="skills-grid">
-                <div>
-                    <h4>Langages</h4>
+        <section id="profil" class="meelo-section">
+            <div class="container">
+                <h2>Profil Professionnel</h2>
+                [cite_start]<p class="description">Junior Software Developer motivée, passionnée par le développement et l’amélioration de logiciels[cite: 4, 72]. [cite_start]Expérience en programmation web et analyse de données [cite: 5, 73][cite_start], capable de résoudre des problèmes techniques complexes et d’apprendre rapidement de nouvelles technologies[cite: 5, 73, 76]. [cite_start]Rigoureuse, autonome et collaborative, avec une forte capacité à travailler en équipe[cite: 6, 74].</p>
+                
+                <div class="key-skills">
+                    <h3>Compétences Clés</h3>
+                    [cite_start]<p>Esprit analytique et rigueur [cite: 98][cite_start], Sens du détail et de l'organisation [cite: 99][cite_start], Capacité à traduire les données en insights clairs [cite: 100][cite_start], Collaboration et communication efficace [cite: 101][cite_start], Apprentissage rapide et autonomie[cite: 102].</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="competences" class="meelo-section">
+            <div class="container">
+                <h2>Compétences Techniques</h2>
+                <div class="skills-grid">
+                    <div>
+                        <h3>Langages</h3>
+                        <ul>
+                            [cite_start]<li>SQL, Python [cite: 41, 40]</li>
+                            [cite_start]<li>HTML, CSS, PHP, JavaScript (bases) [cite: 41, 75]</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Outils & Bases de Données</h3>
+                        <ul>
+                            [cite_start]<li>Databases : MySQL, SQLite [cite: 43, 40]</li>
+                            [cite_start]<li>Analyse/Viz : Excel, Google Sheets, Power BI, Tableau (base) [cite: 42, 40]</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Concepts</h3>
+                        <ul>
+                            [cite_start]<li>Nettoyage et organisation des données, visualisation [cite: 44, 40]</li>
+                            [cite_start]<li>Reporting et Analyse descriptive [cite: 44, 40]</li>
+                            [cite_start]<li>Concepts ETL (Data Engineering) [cite: 44]</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projets" class="meelo-section meelo-projects">
+            <div class="container">
+                <h2>Projets Sélectionnés</h2>
+
+                <div class="project-item">
+                    <h3>Analyse de Performance et Dashboard (Data)</h3>
+                    <p class="meta">SQL, Python, Power BI</p>
+                    <p>Projet d'analyse et de visualisation de données visant à transformer les données de ventes brutes en indicateurs clés de performance (KPI) pour la prise de décision. </p>
+                    <a href="#" target="_blank" class="project-link">Voir le Projet →</a>
+                </div>
+
+                <div class="project-item">
+                    <h3>Développement d'Application Web (Software)</h3>
+                    <p class="meta">PHP, MySQL, JavaScript</p>
+                    [cite_start]<p>Conception et implémentation d'une application dynamique basée sur une base de données optimisée, démontrant la maîtrise des architectures backend et des principes CRUD. [cite: 23, 24]</p>
+                    <a href="#" target="_blank" class="project-link">Voir le Code →</a>
+                </div>
+                
+                <div class="project-item">
+                    <h3>Modélisation de Données (Database)</h3>
+                    <p class="meta">SQL, Modélisation</p>
+                    [cite_start]<p>Exercices pratiques de modélisation de données et de requêtes complexes, basés sur l'expérience en tant qu'enseignante et l'optimisation des bases de données. [cite: 29, 128]</p>
+                    <a href="#" target="_blank" class="project-link">Voir les Exemples →</a>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="experience" class="meelo-section">
+            <div class="container">
+                <h2>Expérience</h2>
+
+                <div class="experience-item">
+                    <p class="title">Agente de voyage - Classy Travel</p>
+                    <p class="date-location">2024 | Montréal, QC</p>
                     <ul>
-                        [cite_start]<li>SQL [cite: 36, 83]</li>
-                        [cite_start]<li>Python [cite: 36, 83]</li>
-                        [cite_start]<li>HTML, CSS, PHP, JavaScript (bases) [cite: 36, 83, 109]</li>
+                        [cite_start]<li>Analyse des profils clients pour proposer des offres personnalisées basées sur les données de ventes[cite: 18, 59].</li>
+                        [cite_start]<li>Création de rapports hebdomadaires sur les performances des ventes et la satisfaction client[cite: 20, 59].</li>
                     </ul>
                 </div>
-                <div>
-                    <h4>Bases de données & Outils d'Analyse</h4>
+
+                <div class="experience-item">
+                    <p class="title">Développeuse web et designer - Original Engineering</p>
+                    <p class="date-location">2016 – 2018 | Tunisie</p>
                     <ul>
-                        [cite_start]<li>MySQL, SQLite [cite: 39, 85]</li>
-                        [cite_start]<li>Excel, Google Sheets [cite: 37, 84]</li>
-                        [cite_start]<li>Power BI, Tableau (base) [cite: 37, 84]</li>
+                        [cite_start]<li>Conception et mise à jour de sites web dynamiques avec HTML, CSS, JavaScript et PHP[cite: 23, 59].</li>
+                        [cite_start]<li>Optimisation de bases de données MySQL pour améliorer la performance et la fiabilité des systèmes[cite: 24, 59].</li>
                     </ul>
                 </div>
-                <div>
-                    <h4>Autres Concepts</h4>
+                
+                <div class="experience-item">
+                    <p class="title">Enseignante - Institut Supérieur des Études Technologiques du Kef</p>
+                    <p class="date-location">2016 – 2019 | Tunisie</p>
                     <ul>
-                        [cite_start]<li>Nettoyage et organisation des données [cite: 40]</li>
-                        [cite_start]<li>Visualisation et Analyse descriptive [cite: 40]</li>
-                        [cite_start]<li>Concepts ETL (pour Data Engineer) [cite: 125]</li>
-                        [cite_start]<li>Programmation Orientée Objet (OOP), structures de données (pour Software Developer) [cite: 109]</li>
+                        [cite_start]<li>Encadrement d'étudiants dans les cours de programmation et de bases de données[cite: 28, 59].</li>
+                        [cite_start]<li>Développement d'exercices pratiques sur SQL et la modélisation de données[cite: 29, 59].</li>
                     </ul>
                 </div>
+
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="experience" class="work">
-        <div class="container">
-            <h3>💼 Expérience Professionnelle</h3>
+        <section id="formation" class="meelo-section">
+            <div class="container">
+                <h2>Formation</h2>
+                <div class="education-item">
+                    <p class="title">HEC Montréal - Certificat en exploitation et valorisation des données</p>
+                    [cite_start]<p class="date-location">Début : Hiver 2026 [cite: 32, 59]</p>
+                </div>
+                <div class="education-item">
+                    <p class="title">Maîtrise en sciences de l'informatique (Multimédia et Web)</p>
+                    <p class="date-location">Institut Supérieur d'Informatique du Kef, Tunisie | [cite_start]2021 [cite: 35, 59]</p>
+                </div>
+                <div class="education-item">
+                    <p class="title">Maîtrise en sciences de l'informatique (Génie logiciel et développement rapide des applications)</p>
+                    <p class="date-location">Institut Supérieur des Études Technologiques de Sousse, Tunisie | [cite_start]2015 [cite: 36, 59]</p>
+                </div>
+                </div>
+        </section>
 
-            <div class="job">
-                <h4>Agente de voyage - Classy Travel</h4>
-                <p class="meta">2024 | Montréal, QC</p>
-                <ul>
-                    [cite_start]<li>Analyse des profils clients pour proposer des offres personnalisées basées sur les données de ventes[cite: 10, 60, 101].</li>
-                    [cite_start]<li>Saisie, vérification et mise à jour des données clients dans le système interne[cite: 11, 61, 101].</li>
-                    [cite_start]<li>Création de rapports hebdomadaires sur les performances des ventes et la satisfaction client[cite: 12, 62, 101].</li>
-                    [cite_start]<li>Utilisation d'Excel et de Google Sheets pour le suivi des indicateurs et la visualisation des tendances[cite: 13, 63, 101].</li>
-                </ul>
+        <section id="contact" class="meelo-contact">
+            <div class="container">
+                <h2>Contact & Langues</h2>
+                <div class="contact-details">
+                    [cite_start]<p>📍 Montréal, QC [cite: 54]</p>
+                    [cite_start]<p>📧 <a href="mailto:ameni1tlili@gmail.com">ameni1tlili@gmail.com</a> [cite: 54]</p>
+                    [cite_start]<p>📞 438-855-130 [cite: 54]</p>
+                    [cite_start]<p class="language-detail">Français : Avancé [cite: 50] | [cite_start]Anglais : Intermédiaire [cite: 51] | [cite_start]Arabe : Langue Maternelle [cite: 52]</p>
+                </div>
             </div>
+        </section>
+    </main>
 
-            <div class="job">
-                <h4>Développeuse web et designer - Original Engineering</h4>
-                <p class="meta">2016-2018 | Tunisie</p>
-                <ul>
-                    [cite_start]<li>Conception et mise à jour de sites web dynamiques avec HTML, CSS, JavaScript et PHP[cite: 15, 65, 101].</li>
-                    [cite_start]<li>Optimisation de bases de données MySQL pour améliorer la performance et la fiabilité des systèmes[cite: 16, 66, 101].</li>
-                </ul>
-            </div>
-            
-            <div class="job">
-                <h4>Enseignante - Institut Supérieur des Études Technologiques du Kef</h4>
-                <p class="meta">2016-2019 | Tunisie</p>
-                <ul>
-                    [cite_start]<li>Encadrement d'étudiants dans les cours de programmation et de bases de données[cite: 21, 70, 101].</li>
-                    [cite_start]<li>Développement d'exercices pratiques sur SQL et la modélisation de données[cite: 22, 71, 101].</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="formation" class="education">
+    <footer class="meelo-footer">
         <div class="container">
-            <h3>🎓 Formation</h3>
-            <ul>
-                [cite_start]<li>HEC Montréal - Certificat en exploitation et valorisation des données (Début: Hiver 2026) [cite: 24, 73, 101]</li>
-                [cite_start]<li>Maîtrise en sciences de l'informatique (Multimédia et Web) - Institut Supérieur d'Informatique du Kef, Tunisie (2021) [cite: 29, 77, 101]</li>
-                [cite_start]<li>Maîtrise en sciences de l'informatique (Génie logiciel et développement rapide des applications) - Institut Supérieur des Études Technologiques de Sousse, Tunisie (2015) [cite: 30, 78, 101]</li>
-                [cite_start]<li>Baccalauréat en sciences de l'informatique - Institut Supérieur des Études Technologiques de Sousse, Tunisie (2013) [cite: 32, 79, 101]</li>
-                [cite_start]<li>Certificats Coursera (Web Applications, Database Applications, Data Analysis with Excel) (2025) [cite: 26, 27, 28, 75, 76, 101]</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <h3>📧 Contact</h3>
-            <p>Je suis ouverte à de nouvelles opportunités. N'hésitez pas à me contacter :</p>
-            <ul>
-                [cite_start]<li><i class="fas fa-map-marker-alt"></i> Montréal, QC [cite: 2]</li>
-                [cite_start]<li><i class="fas fa-envelope"></i> ameni1tlili@gmail.com [cite: 2]</li>
-                [cite_start]<li><i class="fas fa-phone"></i> 438-855-130 / +1 438-855-130 [cite: 2, 52]</li>
-                [cite_start]<li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/amanitlili/" target="_blank">linkedin.com/in/amanitlili/</a> [cite: 2]</li>
-            </ul>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Amani Tlili. Tous droits réservés.</p>
+            <p>© 2025 Amani Tlili.</p>
+            <nav class="footer-nav">
+                <a href="#accueil">Retour en haut</a>
+                <a href="https://www.linkedin.com/in/amanitlili/" target="_blank">LinkedIn</a>
+            </nav>
         </div>
     </footer>
 
